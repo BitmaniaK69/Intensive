@@ -27,7 +27,8 @@
 24. END GAME (DUELS)  
 25. SCORING (DUELS)  
 26. GLOSSARY  
-27. DESIGNER NOTE (NON-RULE APPENDIX)
+27. DESIGNER NOTE (NON-RULE APPENDIX)  
+APPENDIX: RETAINERS (HISTORICAL NOTES & ACTIONS)
 
 ---
 
@@ -108,6 +109,7 @@ Before play:
 
 Deck preparation:
 1. Remove the Daimyo card from the deck and keep it face up beside the Player Board (it will be placed on the Game Board during Junbi).
+   - The Daimyo is parked beside/on the Player Board during setup only; it is not yet on the Game Board.
 2. Shuffle the remaining 19 cards and place them face down on the side of the Player Board.
 3. Draw an initial hand of 3 cards.
 4. If the initial hand contains no Numbered cards, reshuffle that hand into the deck and redraw 3 cards (repeat until at least one Numbered card is in hand).
@@ -144,12 +146,12 @@ Zones:
 
 Line control:
 - A valid line runs from one side of the board to the opposite side.
-- A line is controlled only if all its spaces are occupied by your clan (top visible cards).
+- A line is controlled only if all its spaces are occupied by your clan (top cards; face-down top cards still count as their clan).
 - Vertical and horizontal lines are valid.
 - Diagonals are not valid lines.
 
 Control and stacking:
-- In stacked spaces, only the top visible card counts for control checks.
+- In stacked spaces, only the top card counts for control checks; if it is face-down, it still counts as its clan but has no revealed number.
 - A prefecture can contribute to both its zone and a valid line at the same time.
 - When both apply, both income contributions are counted.
 
@@ -164,12 +166,13 @@ It shows:
 - Clan identity and symbols.
 
 RULE:
-- End-of-Turn Koku income values are defined on the Player Board (Economy section) and are authoritative for economy calculation.
+- The Player Board repeats economy values as a quick reference.
+- This rulebook defines the full economy timing, caps, and edge cases.
 Player Board income schema (as shown):
 - Every counting: +1 Koku (base income).
 - With Market built: +1 Koku.
 - Every Zone or Line conquered: +1 Koku (each).
-- Per Central controlled (Imperial Space): +1 Koku (each).
+- Per Central controlled (Imperial Zone): +1 Koku (each).
 - End-of-round counting cap: max 5 Koku gained from this counting step.
 - Storage cap is applied after counting: keep up to 6 Koku in storage, discard excess.
 
@@ -190,7 +193,7 @@ Deck consistency:
 - Numbered cards and Retainer cards share the same clan back style so hidden cards are not role-revealed from the back.
 
 ### Daimyo Card
-- Placed at setup and remains on board.
+- Placed on the Game Board during Junbi and remains on board.
 - Starts the Chain of Command.
 - Can hold up to 3 reserved tokens for later building use.
 - Is not counted for end-game card scoring.
@@ -216,20 +219,29 @@ ILLUSTRATION: card fan showing Daimyo, Numbered, and Retainer examples.
 Retainer cards provide tactical actions and can be played either by placing them or by resolving their effect according to icon/text.
 
 General structure:
-- Each Retainer has 2 Actions available to execute but only one can be chosen when the card is used.
+- Each Retainer has 2 Order Actions, but only one can be chosen when the card is used.
 - Use mode depends on icon/text (Place or Discard logic).
 
 Action and usage rules:
+- When you play a Retainer, choose and resolve exactly 1 of its 2 Order Actions.
+- If that same Retainer card later returns to your hand, it may be played again and you may choose either Order Action again.
 - Retainer effects are single-use unless card text explicitly states an exception.
 - Some cards explicitly restrict repeated use in the same turn (for example specific Chajin text).
 - A player may stop at 2 cards in hand; to play one final card (down to 1), they must pay 1 Koku.
+- Reveal, Convert Koku, Build, and Error Fix are Turn Procedures (not Retainer Order Actions) and may all be performed in the same turn if legal.
 
 Face-down cards (Numbered placeholders + hidden traps):
 - Only **Numbered** cards may be placed face-down as hidden placeholders.
 - Some **Retainers** cards such as Shinobi and Ronin may be placed face-down as hidden traps.
+- A face-down **Numbered** card is a hidden placeholder with no active number while it remains face-down.
+- While face-down, a Numbered placeholder does not create Numbered Sudoku conflicts (row/column/zone duplicates).
+- While face-down on top of a space/stack, it still occupies the space and counts as its clan for control checks.
 - Face-down cards cannot be placed in **Imperial Zones**.
 - Face-down cards can be placed on top of **Retainer/Special** cards when stacking is otherwise legal.
 - Face-down traps are not identifiable until a player pays the Reveal cost.
+- No player (including the owner) may look at a face-down card without paying the Reveal cost, unless a card effect explicitly allows it.
+- When a face-down card is revealed, flip it face-up and apply its normal identity immediately.
+- If a revealed Numbered card now creates a forbidden duplicate, an Error is created immediately.
 - When a face-down Shinobi or Ronin is revealed, resolve its trap effect once, then remove the card from the map and discard it.
 - If any other card is accidentally placed face-down, flip it face-up immediately (no cost) and continue play.
 - Face-down cards cannot receive Protection tokens.
@@ -254,6 +266,7 @@ When placing from hand, follow both card text and Sudoku constraints.
 RULES:
 - Daimyo cards cannot share row, column, or zone with other Daimyos.
 - Numbered cards cannot duplicate within the same row, column, or zone.
+- Face-down Numbered placeholders have no active number while hidden, so they do not create Numbered duplicates until revealed.
 - Retainer cards may coexist with other Retainer cards in the same row/column/zone unless card text says otherwise.
 
 If no valid placement is possible:
@@ -262,7 +275,7 @@ If no valid placement is possible:
 
 Stacking:
 - Stacking is allowed on Numbered cards, Retainer cards, face-down Numbered placeholders, and face-down Shinobi/Ronin traps.
-- In a stack, only the top visible card counts for active control/sudoku checks.
+- In a stack, only the top card is active for control/sudoku checks; if the top card is face-down, only clan ownership applies until reveal.
 - If the top card is removed, the revealed lower card becomes active immediately.
 - Revealed lower cards can immediately create errors that must be resolved.
 - There is no hard limit on pile height.
@@ -294,6 +307,7 @@ Rebellion correction:
 Resolution effects:
 - Removed offending cards lose attached protection/buildings.
 - The fixer gains 1 Protection token for each corrected error (multiple corrections in the same turn grant multiple tokens).
+- If one card removal resolves multiple errors at once, gain 1 Protection token for each error resolved.
 - Each gained Protection token must be placed immediately on a legal eligible face-up map card.
 - If no legal map placement exists, the fixer may park that token on their Daimyo reserve (max 3).
 - If no legal map placement exists and the Daimyo reserve is full, that token is lost and returned to supply.
@@ -324,13 +338,14 @@ Rules:
 - Protection tokens cannot be placed on face-down cards by action, effect, or correction.
 - A Capital must be placed over a face-down base card and becomes the protection for that stack.
 - Protection tokens can be placed only on Numbered cards or Retainer cards that are not already protected (maximum one piece per card: 1 Protection token, or 1 Market, or 1 Castle).
-- Daimyo can hold up to 3 parked reserved tokens; these parked tokens are not protection and do not make Daimyo "protected."
+- Daimyo can hold up to 3 parked reserve Protection tokens; these tokens are not Koku and do not make Daimyo "protected."
 - Tokens gained from error correction may be parked on Daimyo reserve only when immediate legal map placement is impossible; if reserve is full, excess is discarded.
 
 ### Daimyo Card
-- Daimyo is always placed on the Game Board at the beginning of the game
-- can hold up to 3 reserved build tokens that are parked (reserve only), not automatic protection.
+- Daimyo is placed on the Game Board during Junbi and then remains on the map.
+- can hold up to 3 reserved build tokens (Protection tokens only) in its reserve slots; these do not provide automatic protection.
 - Reserved tokens can be removed by card effects (for example steal/kill effects) if targeted legally.
+- Koku tokens are never placed on the Daimyo card.
 
 Gameplay terms used in this chapter:
 - Adjacent: horizontal, vertical, or diagonal contact.
@@ -361,10 +376,17 @@ The current system separates currency and map protection.
 - Protection tokens are placed on map cards.
 - They provide defense and are also used as building progress for Castles and Market.
 - Koku is the main currency. Protection tokens are generated by converting Koku during your turn.
-- Main Action — Convert Koku: You may convert any amount of Koku into Protection tokens at a rate of 2 Koku -> 1 Protection token.
+- Turn Procedure — Convert Koku: You may convert any amount of Koku into Protection tokens at a rate of 2 Koku -> 1 Protection token.
+
+### Daimyo Reserve (Protection-only reserve on the Daimyo card)
+- The Daimyo card may hold up to 3 reserve Protection tokens.
+- Tokens in the Daimyo reserve are still Protection tokens (not Koku).
+- Daimyo reserve tokens do not protect the Daimyo automatically.
+- Daimyo reserve tokens may be committed to building conversion when allowed by the Building rules.
 
 ### Player Supply (Off-map Components)
 - Each player keeps a personal supply pile next to their board (Protection tokens, Koku, Castles, and other components) that are not currently on the map.
+- Koku tokens should normally remain in the Player Board area; they are never placed on map cards or on the Daimyo card.
 - When an effect steals Protection tokens and the target has fewer tokens on the map than required, the remaining tokens are taken from that player's personal supply.
 
 ### Alliance Tokens (Expert Mode)
@@ -382,7 +404,7 @@ ILLUSTRATION: token-type overview with board examples and icon callouts.
 
 **Spend Koku (currency):**
 - **Reveal (Bribery): 3 Koku** to reveal any face-down card (including your own).
-- **Convert to Protection (Main Action):** 2 Koku → 1 Protection token (you may convert any amount you currently have).
+- **Convert to Protection (Turn Procedure):** 2 Koku → 1 Protection token (you may convert any amount you currently have).
 
 **Spend/Use Protection tokens (map resources):**
 - **Place for defense:** place 1 Protection token on an eligible face-up card (max 1 piece per card: 1 token *or* 1 building).
@@ -430,9 +452,10 @@ Process:
 - The destination can be any eligible connected Numbered card; it does not need to be one of the cards that provided the tokens.
 
 Mandatory transformation rule:
-- If you have at least 3 Protection tokens on connected cards in your Chain of Command, conversion is mandatory when a valid connected Numbered destination exists.
+- Automatic conversion is mandatory only if you have at least 3 Protection tokens on connected **Numbered** cards and a valid connected Numbered destination exists.
 - Remove any 3 eligible committed tokens from your connected chain (common case: 3 tokens on 3 Numbered cards).
 - Committed tokens may come from Numbered cards, Retainer cards, and Daimyo parked reserve tokens, but the building destination must always be a valid connected Numbered card.
+- If the 3 committed tokens include one or more tokens from Retainer cards and/or Daimyo reserve, the conversion is legal but not mandatory.
 
 Stack clarification:
 - A Castle protects the top layer of a stack.
@@ -521,25 +544,32 @@ RULE:
 Example: in 1603 Tokugawa Ieyasu received the shogun title from Emperor Go-Yōzei, often treated as the start of the Tokugawa shogunate.
 Related episode: Akechi Mitsuhide is often remembered as the self-proclaimed "thirteen-day shogun" for his short-lived bid to seize power after Honnō-ji.
 
-A player declares Shogun when they meet the Capital condition and maintain valid chain connectivity.
+A player who completes a connected Capital becomes a Shogun Candidate. Shogun is confirmed later during endgame checks.
 
-Shogun Declaration (during your turn):
+Shogun Candidacy Declaration (during your turn):
 1) Complete a Capital that is connected to your Chain of Command.
-2) Immediately declare your candidacy as Shogun.
+2) Immediately declare your candidacy as Shogun (mandatory; this declaration cannot be skipped).
 3) Start the Final Cycle: all other players take one final turn in turn order.
-4) During the Final Cycle, if your Capital becomes disconnected from your Chain of Command, you cannot claim/keep Shogun status (revocation).
+4) During the Final Cycle, if your Capital becomes disconnected from your Chain of Command, your candidacy becomes invalid unless you reconnect before candidate confirmation.
 
 Endgame sequence:
 - This round is called the Shogunate Final Cycle.
 - When the Shogunate Final Cycle starts, all active alliances are immediately broken and alliance tokens are returned to the discarded token pool.
-- During the Final Cycle, other players may also satisfy and declare Shogun.
+- During the Final Cycle, other players may also satisfy the Capital condition and declare Shogun candidacy.
+
+Candidate confirmation step (Koku-only):
+- After all final turns are completed, resolve a Candidate Confirmation step in turn order (starting from the anchor player).
+- Only players who currently have a valid connected Capital may act in this step.
+- In this step, valid candidates may spend Koku on legal Koku-based effects only.
+- Players without a valid connected Capital do not act in this step.
+- When a candidate's confirmation timing is reached and their Capital is still valid and connected, that player is confirmed as Shogun.
 
 Final action window:
-- Declared Shogun players may still use legal defensive/interruption Retainers.
+- Shogun Candidates may still use legal defensive/interruption Retainers during the Shogunate Final Cycle when a card/rule allows it.
 - Koku can still be spent for legal reveal/defensive decisions during the Shogunate Final Cycle.
 
 NOTE:
-- Shogun status is condition-based and must remain valid through endgame checks.
+- Shogun confirmation is condition-based and depends on Capital connectivity at candidate confirmation timing.
 
 ILLUSTRATION: Shogun declaration timeline with chain-valid and chain-broken examples.
 
@@ -625,10 +655,10 @@ A turn has three sections:
 2) Main turn section
 - Play cards down to 2 cards in hand.
 - You may play one additional last card by paying **1 Koku** (ending with 1 card in hand).
-- Main Action — Convert Koku (2 Koku -> 1 Protection token, any amount during your turn), then place Protection tokens.
+- Turn Procedure — Convert Koku (2 Koku -> 1 Protection token, any amount during your turn), then place Protection tokens.
 - Build Market/Castle/Capital when conditions are met.
 - Reveal (Bribery): Pay 3 Koku to reveal any face-down card (including your own).
-- Optionally: fix errors, make/break alliances (Expert Mode), and declare Shogun when valid.
+- Optionally: fix errors, make/break alliances (Expert Mode), and declare Shogun candidacy when valid.
 
 3) End of turn
 - Draw/refill back up to **3** cards for your next turn.
@@ -637,9 +667,11 @@ A turn has three sections:
 
 RULE:
 - Full error-fix actions and action execution happen only during the main turn section.
+- Retainer Order Actions and Turn Procedures are separate systems.
+- Reveal, Convert Koku, Build, and Error Fix may all be performed in the same turn if legal (there is no global action-point limit).
 - Off-turn players may still call an immediate illegal placement before turn handoff, and the acting player corrects it immediately (no reward).
 - During end of turn, no new actions are executed and Koku is only collected/applied.
-- End-of-Turn Koku income is defined on the Player Board (Economy section). Use the Player Board as the source of truth for income calculation.
+- The Player Board repeats economy values as a quick reference; use this rulebook for timing, caps, and edge cases.
 - Economy summary (see Player Board for values): End of turn, gain Koku from Base income, Market, Controlled Zones or Lines, and Controlled Imperial Zones.
 - Income from Zones and Imperial Zones stacks.
 - Example: if you control all 4 Imperial Zones and also control 1 Zone, you gain +5 Koku from these two sources (4 + 1).
@@ -649,6 +681,7 @@ RULE:
 - If deck runs out, follow the active mode rule:
 - Standard Mode: reshuffle discard as new draw deck.
 - Expert Mode with Visit the Emperor: at first required-draw exhaustion, do the same normal reshuffle and mark Emperor Visit as lost if it was unused.
+- In normal flow, the end-of-turn refill already restores your hand to 3; the beginning refill often draws 0 and mainly exists to recover from off-turn hand loss.
 
 ILLUSTRATION: turn summary sheet with phase order and timing notes.
 
@@ -657,29 +690,33 @@ RULE:
 ---
 
 ## 19) END GAME SEQUENCE (STANDARD)
-Endgame starts when a player declares Shogun with a valid connected Capital condition.
+Endgame starts when a player declares Shogun candidacy with a valid connected Capital condition.
 
 Shogun trigger:
 - 1 connected Capital is sufficient.
 
 Final-round anchor:
-- The first player who declares Shogun is the anchor player.
+- The first player who declares Shogun candidacy is the anchor player.
 - After declaration, all other players take one final turn in turn order.
 
 Multiple Shogun declarations:
-- Other players may also satisfy and declare Shogun during the Shogunate Final Cycle.
-- All valid declarations before closure are considered in scoring.
+- Other players may also satisfy the Capital condition and declare Shogun candidacy during the Shogunate Final Cycle.
+- All candidates who still have a valid connected Capital at confirmation timing are considered in scoring.
 
 Final-phase interaction:
 - Samurai-style interruptions are allowed in the Shogunate Final Cycle only as legal defensive reactions.
-- If chain/capital validity is broken before closure, the affected player is no longer a valid Shogun until reconnected.
+- If chain/capital validity is broken before candidate confirmation, the affected player's candidacy is invalid until reconnected.
+
+Candidate confirmation / closure:
+- After the table-wide Final Cycle ends, resolve the Candidate Confirmation step (Koku-only) in turn order starting from the anchor player.
+- Only players with a currently valid connected Capital act in this step and can spend Koku on legal Koku-based effects.
+- When the Candidate Confirmation step ends, scoring begins immediately.
 
 ILLUSTRATION: endgame timeline from first declaration to table-wide closure.
 
 RULE:
-- If the anchor player loses Shogun status before closure, the current Final Cycle is cancelled immediately.
-- If a player later restores the condition and declares Shogun again, a new Final Cycle starts from that declaration (all other players get one final turn again).
-- This cancel/restart loop can happen multiple times until closure occurs with a valid Shogun state.
+- Declaring Shogun candidacy is mandatory when you complete a connected Capital.
+- A player may lose and later recover candidacy by losing/reconnecting Capital chain validity before candidate confirmation.
 ---
 
 ## 20) FINAL SCORING (STANDARD)
@@ -690,13 +727,13 @@ Score:
 - +1 each full zone or line under control.
 - +1 each Castle.
 - +3 each Capital.
-- +4 if player is Shogun.
+- +4 if player is a confirmed Shogun.
 - +1 if (Expert Mode) the player never used their Emperor reshuffle right.
 - Losing Emperor right by automatic deck-exhaustion handling counts as "used" (no +1 bonus).
 
 Control definition:
 - "Under your control" means the relevant zone/line is fully occupied by your clan cards (face-down cards still count as your clan).
-- In stacked spaces, only the top visible card determines control.
+- In stacked spaces, only the top card determines control; a face-down top card still counts as its clan.
 - Chain of Command adjacency is edge-to-edge only (no diagonal chain links).
 
 RULE:
@@ -713,7 +750,7 @@ Alliance token scoring:
 
 
 NOTES/TIPS:
-- Being declared Shogun does not guarantee victory.
+- Becoming a Shogun Candidate does not guarantee victory.
 - Large connected protected areas usually score better than scattered expansion.
 
 ILLUSTRATION: final scoring reference panel with connected vs disconnected examples.
@@ -732,6 +769,7 @@ Preparation steps:
 4. Once all Daimyo cards are placed, normal turn flow begins.
 
 Setup clarification:
+- During setup, each Daimyo card is parked beside/on the Player Board until its Junbi placement turn.
 - This preparation phase uses Daimyo placement only.
 - Numbered-card setup placement is not part of this phase in the current ruleset.
 
@@ -798,12 +836,13 @@ ILLUSTRATION: Duels rule panel with chain and bridge examples.
 Duels endgame follows the same Shogun trigger principle used in standard mode.
 
 Trigger:
-- A player declares Shogun when they satisfy the active Capital condition with valid chain connectivity.
+- A player declares Shogun candidacy when they satisfy the active Capital condition with valid chain connectivity.
 
 Closure:
 - After declaration, the opponent takes one final turn.
-- If the opponent also satisfies Shogun conditions in that final turn, both statuses are considered during scoring.
-- After that final turn, the game ends and scoring begins.
+- If the opponent also satisfies the Capital condition in that final turn, both players may become Shogun Candidates.
+- After that final turn, resolve the Candidate Confirmation step (Koku-only): only players with a valid connected Capital may act, in order, spending only Koku on legal Koku-based effects.
+- After the Candidate Confirmation step, the game ends and scoring begins.
 
 ILLUSTRATION: Duels endgame timeline from first declaration to final scoring.
 RULE:
@@ -822,7 +861,7 @@ Scoring items:
 - +1 for controlling the central bridge zone.
 - +1 for each Castle.
 - +3 for each Capital.
-- +4 for each Shogun declaration.
+- +4 if player is a confirmed Shogun.
 - +1 if (Expert Mode) the player never used their Emperor reshuffle right.
 - Losing Emperor right by automatic deck-exhaustion handling counts as "used" (no +1 bonus).
 
@@ -975,6 +1014,8 @@ Kill or Return the rest of the stack
 *Number* or *Retainer* cards
 [max 1 per Player, rest from resources]
 > Action2 explanation: token-theft sacrifice (trap-capable in current tagging); steal up to two tokens with max one token from each player, then complete from resources if required by effect text.
+
+END OF RULEBOOK / INTERNAL DESIGN NOTES BELOW
 
 ----------------------------------
 ### [UPDATES]

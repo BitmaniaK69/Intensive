@@ -37,6 +37,12 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
   - Daimyo is staged beside Player Board during deck setup and placed on the Game Board during Junbi.
 - **Mode geometry backlog formalized**:
   - 5x5 (The Duel) and 9x9 (The Grand Campaign) starting coordinates/zone geometry are explicitly tracked as pending definitions in NOTE TO TEST/ADD.
+- **Face-down Numbered placeholder clarified**:
+  - While face-down, a Numbered placeholder has no active number and does not create Sudoku duplicates until revealed.
+- **Retainer vs Turn Procedure split clarified**:
+  - V24 now distinguishes Retainer Order Actions from Turn Procedures (Reveal / Convert Koku / Build / Error Fix).
+- **Shogun flow rephrased and tightened**:
+  - Players first become **Shogun Candidates**, then are confirmed later in a Candidate Confirmation step (Koku-only).
 
 ---
 
@@ -63,6 +69,8 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
 - **Capital track simplified**:
   - V22 component/rules allow up to 2 capitals (`AI/rulesV22.md:66`, `AI/rulesV22.md:503`).
   - V24 uses single active capital path for Shogun progression (`AI/rulesV24-update.md:75`, `AI/rulesV24-update.md:461`).
+- **Mandatory building conversion refined**:
+  - V24 now makes automatic conversion mandatory only for 3 Protection tokens on connected **Numbered** cards (not every legal token mix that includes Retainers/Daimyo reserve).
 
 ---
 
@@ -73,6 +81,10 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
 - **Anchor/final-cycle behavior defined in V24**:
   - V24 adds anchor re-declare/full rotation rule (`AI/rulesV24-update.md:631`, `AI/rulesV24-update.md:645`).
   - V22 leaves this ambiguous (explicit questions remain).
+- **Shogun candidacy/confirmation model introduced**:
+  - V24 now distinguishes Shogun candidacy from confirmed Shogun status.
+  - After the final cycle, V24 resolves a Candidate Confirmation step in turn order.
+  - Candidate Confirmation is Koku-only (players with valid connected Capital only).
 - **Tie-break clarified in V24**:
   - V24: highest remaining Koku on the Player Board, then shared victory.
   - This is now the same tie-break logic in both Standard and Duels.
@@ -89,6 +101,9 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
 - **Turn phases rationalized**:
   - V22 has draw-phase ambiguity (start + end confusion) (`AI/rulesV22.md:662`, `AI/rulesV22.md:688`, `AI/rulesV22.md:697`).
   - V24 defines explicit 3-section structure and timing boundaries (`AI/rulesV24-update.md:588`, `AI/rulesV24-update.md:605`).
+- **Turn procedures explicitly separated from Retainer actions**:
+  - V24 clarifies that Reveal / Convert Koku / Build / Error Fix are turn procedures, not Retainer Order Actions.
+  - These can all occur in the same turn if legal (no global action-point limit).
 - **Hand-floor clarified**:
   - V24.1 uses paid-last-card logic: stop at 2, pay 1 Koku to play the last card.
   - V22 text conflicts around “leave 2 cards”.
@@ -111,6 +126,8 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
 - **Control using top visible layer explicitly codified**:
   - V24 repeatedly enforces top-layer control checks (`AI/rulesV24-update.md:148`, `AI/rulesV24-update.md:660`).
   - V22 had this as a major ambiguity area.
+- **Face-down top-layer control wording tightened**:
+  - V24 clarifies a face-down top card still counts for clan control while lacking a revealed number.
 
 ---
 
@@ -124,6 +141,8 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
   - Face-down placement can overlap Retainer/Special cards when legal.
 - **Reveal (Bribery) cost and effects standardized**:
   - V24 fixes reveal at `K3` and integrates with trap resolution (`AI/rulesV24-update.md:367`, `AI/rulesV24-update.md:597`).
+- **Reveal now explicitly creates Errors when relevant**:
+  - If a revealed Numbered card creates a forbidden duplicate, an Error is created immediately.
 
 ---
 
@@ -152,6 +171,8 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
   - `+1` if Emperor reshuffle right unused (`AI/rulesV24-update.md:657`).
 - **Capital value increased in V24.1**:
   - Capital score is now +3 (Standard and Duels).
+- **Shogun scoring wording tightened**:
+  - V24 now scores `+4` for a **confirmed Shogun** (not merely candidacy declaration).
 
 ---
 
@@ -161,6 +182,8 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
   - V24 Duels uses same core Koku/protection framework as standard (`AI/rulesV24-update.md:747`).
 - **Duels tie-break explicitly defined in V24**:
   - Duels now follows the same global tie-break: remaining Koku on Player Board -> shared victory.
+- **Duels closure aligned with Candidate Confirmation**:
+  - Duels now also uses the Candidate Confirmation step (Koku-only) before final scoring.
 
 ---
 
@@ -171,7 +194,9 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
   - deck-runout handling,
   - tie-break wording,
   - quick Koku formula,
-  - clearer Reveal wording.
+  - clearer Reveal wording,
+  - Shogun candidate confirmation timing,
+  - mandatory-conversion exception (Retainer/Daimyo reserve mix).
 - **V22 ambiguity sections replaced by rule assertions in V24**:
   - V22 has extensive `QUESTION:` blocks throughout.
   - V24 converts many of those into concrete rules text.

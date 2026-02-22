@@ -45,8 +45,9 @@ Your **Chain of Command** is the orthogonally connected group (no diagonals) tha
 
 ### 3.3 Control
 A Zone/Line/Imperial Zone is considered yours if it is fully controlled by your clan:
-- In a **stack**, only the **top visible** card counts for control.
-- **Face-down** cards still count as your clan for control, but do **not** score as cards.
+- In a **stack**, only the **top** card counts for control.
+- A **face-down top card** still counts as your clan for control, but has no revealed number.
+- Face-down cards still do **not** score as cards.
 
 ### 3.4 Imperial Zones
 **Imperial Zones** are the **4 marked central spaces** with the Emperor symbol.
@@ -75,12 +76,12 @@ A Zone/Line/Imperial Zone is considered yours if it is fully controlled by your 
 
 ### Main section
 1. **Play cards** down to **2 cards in hand**. You may play one additional last card by paying **1 Koku** (ending with 1 card).
-2. **Convert Koku → Protection** (K2 → 1 token), any amount, at any time in your main section.
+2. **Convert Koku → Protection** (K2 → 1 token), any amount, as a **Turn Procedure** in your main section.
 3. **Place Protection tokens** on eligible cards.
 4. **Build** (Market/Castles/Capital) if requirements are met.
 5. **Reveal** (pay K3 to reveal any face-down card, including your own).
 6. **Fix Errors** (earn rewards).
-7. **Declare Shogun** if you have a connected Capital.
+7. **Declare Shogun candidacy** (mandatory) when you complete a connected Capital.
 
 ### End of turn
 1. **Draw back up to 3**.
@@ -95,6 +96,7 @@ A Zone/Line/Imperial Zone is considered yours if it is fully controlled by your 
 > **Koku Collection (summary)**: base income + bonuses from **Market**, **Zones**, **Lines**, and **Imperial Zones**.  
 > **Zones and Lines both count** if you control both (they stack).
 > **Quick formula**: +1 base, +1 if Market built, +1 per controlled Zone, +1 per controlled Imperial Zone (apply all valid sources; use the Player Board cap for this counting step).
+> In normal flow, end-of-turn refill already restores hand to 3; beginning refill often draws 0 (it mainly covers off-turn hand loss).
 
 ---
 
@@ -102,7 +104,7 @@ A Zone/Line/Imperial Zone is considered yours if it is fully controlled by your 
 ### 6.1 Daimyō
 - Placed on the game board during Junbi setup placement.
 - Cannot be removed or played face-down.
-- Can hold up to **3 reserved build tokens** (not automatic protection).
+- Can hold up to **3 reserve Protection tokens** (not Koku; not automatic protection).
 
 ### 6.2 Numbered cards (1–6)
 You may:
@@ -112,12 +114,13 @@ You may:
 - Place them **face-down** as placeholders (see Face-down rules).
 
 ### 6.3 Retainers (Special cards)
-Each Retainer offers **two actions (A1 / A2)**; when used you choose **one**.
+Each Retainer offers **two Order Actions (A1 / A2)**; when used you choose **one**.
 Depending on icon/text, a Retainer is either:
 - **Placed** on the map (with placement rules), or
 - **Discarded** to resolve an effect.
 
 Some Retainers can stack or cover cards if their text allows it.
+- Retainer **Order Actions** are separate from turn procedures (Reveal, Convert Koku, Build, Error Fix).
 
 > Full Retainer action list is in the **Reference Edition** appendix.
 
@@ -128,6 +131,8 @@ Face-down play exists to keep the map moving (chain extension, zone contests, bl
 
 Rules:
 - **Numbered** cards may be placed **face-down** as hidden placeholders.
+- A face-down Numbered placeholder has **no active number** while hidden.
+- While hidden, it does **not** create Sudoku duplicates until revealed.
 - Some Retainers may be placed **face-down** as hidden **traps** (current set includes Shinobi and Ronin; expansions may add more).
 - Face-down cards may be placed on top of Retainer/Special cards when stacking is otherwise legal.
 - Face-down cards cannot be placed in Imperial Zones.
@@ -139,6 +144,7 @@ Rules:
 Pay **K3** to reveal any face-down card.
 
 - If it’s a normal card: flip it face-up and apply legality checks.
+- If a revealed Numbered card creates a forbidden duplicate, an **Error** is created immediately.
 - If it’s a trap: resolve its trap effect once, then remove it from the map and discard it.
 - Reveal can also fix/trigger Errors (see Errors).
 
@@ -158,6 +164,7 @@ Fixing:
 
 Rewards:
 - The fixer gains **+1 Protection token per Error fixed**.
+- If one removal resolves multiple Errors at once, gain **+1 token per Error resolved**.
 - Each gained token is placed immediately on a legal eligible **face-up** map card.
 - If no legal map placement exists, the token may be parked on your Daimyō reserve (max 3).
 - If no legal map placement exists and Daimyō reserve is full, that token is lost and returned to supply.
@@ -173,9 +180,10 @@ Rewards:
 
 ### 9.2 Build a Market or Castle
 Buildings are made by **progression**, not by paying Koku directly.
-- If you have **3 Protection tokens** on connected cards in your Chain of Command and a valid connected Numbered destination exists, conversion is **mandatory**.
+- Automatic conversion is **mandatory only** if you have **3 Protection tokens on connected Numbered cards** and a valid connected Numbered destination exists.
 - Remove any **3 eligible Protection tokens** from your connected chain.
 - Place **1 Castle or 1 Market** on any eligible connected Numbered card (it does not need to be one of the source cards).
+- If the 3 tokens include one or more tokens from Retainers and/or Daimyō reserve, the conversion is legal but **not mandatory**.
 
 Notes:
 - Max **1 Market** per player.
@@ -199,10 +207,12 @@ Process:
 ---
 
 ## 10) Shogun and endgame
-When you have a **connected Capital**, you may **declare Shogun** during your turn.
+When you complete a **connected Capital**, you must declare **Shogun candidacy** during your turn.
 - The game enters the **Shogunate Final Cycle**: all other players take one final turn.
-- If your Capital becomes disconnected from your Chain of Command before endgame closes, your Shogun status is revoked until reconnected.
-- Anchor edge case: if the first Shogun (anchor) loses status, then restores it, they must declare again and wait one full rotation before closure.
+- If your Capital becomes disconnected before confirmation, your candidacy is invalid until reconnected.
+- After all final turns, resolve a **Candidate Confirmation step (Koku-only)** in turn order from the anchor player.
+- Only players with a currently valid connected Capital act in that step, and only for legal **Koku-based** effects.
+- A player is a **confirmed Shogun** only when their confirmation timing is reached and their Capital is still valid/connected.
 
 All alliances (Expert Mode) end immediately when the Final Cycle begins.
 
@@ -215,7 +225,7 @@ Score connected elements only:
 - **+1** each fully controlled **Zone** or **Line**.
 - **+1** each **Castle**.
 - **+3** each **Capital**.
-- **+4** if you are **Shogun**.
+- **+4** if you are a **confirmed Shogun**.
 - **+1** (Expert Mode) if you never used your Emperor reshuffle right.
 - Automatic Emperor-right loss from required-draw deck exhaustion counts as "used" (no +1 bonus).
 
@@ -240,7 +250,7 @@ Rules:
 - **Imperial Zones** also block face-down placement.
 - End-of-turn flow now explicitly includes deck exhaustion handling (Standard reshuffle vs Expert Emperor flow).
 - Reveal/trap wording is clarified for face-down cards and trap resolution.
-- Shogun closure includes the anchor edge case (loss and restore of Shogun status).
+- Shogun endgame now uses **candidacy + candidate confirmation (Koku-only)** timing.
 - Scoring now states a clear tie-break (highest remaining Koku on Player Board, then shared victory).
 - Koku collection is summarized with a quick formula for table use.
 - Hand-floor rule updated: play down to 2, then pay 1 Koku to play the last card.
@@ -248,6 +258,7 @@ Rules:
 - Capital scoring increased to +3.
 - Error fix reward now has Daimyō-reserve fallback (and discard overflow when no slot is available).
 - Build progression now clarifies mandatory 3-token conversion and 4th-Castle relocation handling.
+- Mandatory building conversion now applies only to 3 tokens on connected **Numbered** cards (not all legal token mixes).
 - Duels tie-break now follows the same global tie-break rule (highest remaining Koku on Player Board).
 
 ---
