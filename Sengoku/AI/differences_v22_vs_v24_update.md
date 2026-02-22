@@ -1,5 +1,5 @@
 # Sengoku - Differences V22 vs V24.1 Update
-_Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
+_Compared files: `AI/rulesV22.md` and `AI/RulesV24.md`_
 
 ## Scope
 - This document lists the main rules/mechanics differences between V22 and V24.1 Update.
@@ -49,9 +49,9 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
 ## 1) Core System Changes
 - **Currency model changed**:
   - V22 uses generic/honour/power token language (`AI/rulesV22.md:367`, `AI/rulesV22.md:374`).
-  - V24 explicitly splits resources into **Koku (currency)** and **Protection tokens (map resource)** (`AI/rulesV24-update.md:304`, `AI/rulesV24-update.md:337`, `AI/rulesV24-update.md:343`).
+  - V24 explicitly splits resources into **Koku (currency)** and **Protection tokens (map resource)** (`AI/RulesV24.md:304`, `AI/RulesV24.md:337`, `AI/RulesV24.md:343`).
 - **Economy conversion added/standardized**:
-  - V24: `2 Koku -> 1 Protection token` (`AI/rulesV24-update.md:347`, `AI/rulesV24-update.md:368`).
+  - V24: `2 Koku -> 1 Protection token` (`AI/RulesV24.md:347`, `AI/RulesV24.md:368`).
   - This rate is not formalized as such in V22.
 - **Koku cap formalized and tightened**:
   - V24.1: explicit `max 6 Koku`.
@@ -62,13 +62,13 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
 ## 2) Buildings and Combat Evolution
 - **Siege Tower subsystem removed from core V24**:
   - V22 has full tower evolution and attack thresholds (`AI/rulesV22.md:415`, `AI/rulesV22.md:426`, `AI/rulesV22.md:527`).
-  - V24 replaces that path with card-effect attacks and building progression without towers (`AI/rulesV24-update.md:471`, `AI/rulesV24-update.md:400`).
+  - V24 replaces that path with card-effect attacks and building progression without towers (`AI/RulesV24.md:471`, `AI/RulesV24.md:400`).
 - **Market introduced as a core building in V24**:
   - V22 has no Market building chapter.
-  - V24 adds Market in components and progression (`AI/rulesV24-update.md:73`, `AI/rulesV24-update.md:400`, `AI/rulesV24-update.md:423`).
+  - V24 adds Market in components and progression (`AI/RulesV24.md:73`, `AI/RulesV24.md:400`, `AI/RulesV24.md:423`).
 - **Capital track simplified**:
   - V22 component/rules allow up to 2 capitals (`AI/rulesV22.md:66`, `AI/rulesV22.md:503`).
-  - V24 uses single active capital path for Shogun progression (`AI/rulesV24-update.md:75`, `AI/rulesV24-update.md:461`).
+  - V24 uses single active capital path for Shogun progression (`AI/RulesV24.md:75`, `AI/RulesV24.md:461`).
 - **Mandatory building conversion refined**:
   - V24 now makes automatic conversion mandatory only for 3 Protection tokens on connected **Numbered** cards (not every legal token mix that includes Retainers/Daimyo reserve).
 
@@ -77,9 +77,9 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
 ## 3) Shogun and Endgame Logic
 - **Shogun condition normalized**:
   - V22 contains internal conflict (2 capitals vs 3 capitals) (`AI/rulesV22.md:706`, `AI/rulesV22.md:556`, `AI/rulesV22.md:573`).
-  - V24 sets trigger to **1 connected Capital** (`AI/rulesV24-update.md:628`).
+  - V24 sets trigger to **1 connected Capital** (`AI/RulesV24.md:628`).
 - **Anchor/final-cycle behavior defined in V24**:
-  - V24 adds anchor re-declare/full rotation rule (`AI/rulesV24-update.md:631`, `AI/rulesV24-update.md:645`).
+  - V24 adds anchor re-declare/full rotation rule (`AI/RulesV24.md:631`, `AI/RulesV24.md:645`).
   - V22 leaves this ambiguous (explicit questions remain).
 - **Shogun candidacy/confirmation model introduced**:
   - V24 now distinguishes Shogun candidacy from confirmed Shogun status.
@@ -95,12 +95,12 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
 ## 4) Setup and Turn Flow
 - **Junbi setup changed**:
   - V22 Junbi includes placing first Numbered card next to Daimyo (`AI/rulesV22.md:755`, `AI/rulesV22.md:759`).
-  - V24 Junbi is Daimyo-placement-only; no initial numbered placement (`AI/rulesV24-update.md:697`, `AI/rulesV24-update.md:698`).
+  - V24 Junbi is Daimyo-placement-only; no initial numbered placement (`AI/RulesV24.md:697`, `AI/RulesV24.md:698`).
 - **Daimyo setup staging clarified**:
   - V24 now states Daimyo is kept beside the Player Board during deck preparation and placed on the Game Board during Junbi.
 - **Turn phases rationalized**:
   - V22 has draw-phase ambiguity (start + end confusion) (`AI/rulesV22.md:662`, `AI/rulesV22.md:688`, `AI/rulesV22.md:697`).
-  - V24 defines explicit 3-section structure and timing boundaries (`AI/rulesV24-update.md:588`, `AI/rulesV24-update.md:605`).
+  - V24 defines explicit 3-section structure and timing boundaries (`AI/RulesV24.md:588`, `AI/RulesV24.md:605`).
 - **Turn procedures explicitly separated from Retainer actions**:
   - V24 clarifies that Reveal / Convert Koku / Build / Error Fix are turn procedures, not Retainer Order Actions.
   - These can all occur in the same turn if legal (no global action-point limit).
@@ -108,7 +108,7 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
   - V24.1 uses paid-last-card logic: stop at 2, pay 1 Koku to play the last card.
   - V22 text conflicts around “leave 2 cards”.
 - **Deck exhaustion rule updated**:
-  - V24 differentiates Standard reshuffle vs Expert Emperor flow (`AI/rulesV24-update.md:614`, `AI/rulesV24-update.md:615`, `AI/rulesV24-update.md:570`).
+  - V24 differentiates Standard reshuffle vs Expert Emperor flow (`AI/RulesV24.md:614`, `AI/RulesV24.md:615`, `AI/RulesV24.md:570`).
 - **Immediate error-call timing clarified**:
   - V24 uses explicit "before turn handoff" timing and immediate correction without reward.
 
@@ -117,14 +117,14 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
 ## 5) Board and Control Model
 - **Board size for Duels changed**:
   - V22 duels references 4x4 (`AI/rulesV22.md:133`, `AI/rulesV22.md:794`).
-  - V24 uses 5x5 Duels board (`AI/rulesV24-update.md:131`, `AI/rulesV24-update.md:717`).
+  - V24 uses 5x5 Duels board (`AI/RulesV24.md:131`, `AI/RulesV24.md:717`).
 - **Imperial central area formalized in V24**:
-  - V24 defines 4 Imperial Zones, income + restrictions (`AI/rulesV24-update.md:138`, `AI/rulesV24-update.md:139`, `AI/rulesV24-update.md:394`, `AI/rulesV24-update.md:431`).
+  - V24 defines 4 Imperial Zones, income + restrictions (`AI/RulesV24.md:138`, `AI/RulesV24.md:139`, `AI/RulesV24.md:394`, `AI/RulesV24.md:431`).
   - V22 uses different “special zones/bridge” language without this finalized standard model.
 - **5x5 / 9x9 geometry status made explicit**:
   - V24 now marks 5x5 and 9x9 starting-coordinate and zone-geometry definitions as pending backlog items.
 - **Control using top visible layer explicitly codified**:
-  - V24 repeatedly enforces top-layer control checks (`AI/rulesV24-update.md:148`, `AI/rulesV24-update.md:660`).
+  - V24 repeatedly enforces top-layer control checks (`AI/RulesV24.md:148`, `AI/RulesV24.md:660`).
   - V22 had this as a major ambiguity area.
 - **Face-down top-layer control wording tightened**:
   - V24 clarifies a face-down top card still counts for clan control while lacking a revealed number.
@@ -133,14 +133,14 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
 
 ## 6) Face-down / Reveal / Trap Framework
 - **New explicit face-down subsystem in V24**:
-  - Numbered placeholders + trap retainers + reveal timing (`AI/rulesV24-update.md:223`, `AI/rulesV24-update.md:224`, `AI/rulesV24-update.md:597`).
+  - Numbered placeholders + trap retainers + reveal timing (`AI/RulesV24.md:223`, `AI/RulesV24.md:224`, `AI/RulesV24.md:597`).
   - V22 does not define this as a complete formal subsystem.
 - **Center restriction added in V24.1**:
   - Face-down cards are not allowed in Imperial Zones.
 - **Overlap expansion in V24.1**:
   - Face-down placement can overlap Retainer/Special cards when legal.
 - **Reveal (Bribery) cost and effects standardized**:
-  - V24 fixes reveal at `K3` and integrates with trap resolution (`AI/rulesV24-update.md:367`, `AI/rulesV24-update.md:597`).
+  - V24 fixes reveal at `K3` and integrates with trap resolution (`AI/RulesV24.md:367`, `AI/RulesV24.md:597`).
 - **Reveal now explicitly creates Errors when relevant**:
   - If a revealed Numbered card creates a forbidden duplicate, an Error is created immediately.
 
@@ -149,26 +149,26 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
 ## 7) Alliances and Emperor (Expert Mode Refactor)
 - **Alliances moved to Expert-mode framework**:
   - V22 presents alliances as baseline multiplayer chapter (`AI/rulesV22.md:579`).
-  - V24 scopes alliances to Expert mode and player-board conditions (`AI/rulesV24-update.md:524`, `AI/rulesV24-update.md:530`, `AI/rulesV24-update.md:546`).
+  - V24 scopes alliances to Expert mode and player-board conditions (`AI/RulesV24.md:524`, `AI/RulesV24.md:530`, `AI/RulesV24.md:546`).
 - **Alliance marker redefined as protection-token marker**:
-  - V24 formalizes marker behavior and removals (`AI/rulesV24-update.md:534`, `AI/rulesV24-update.md:535`).
+  - V24 formalizes marker behavior and removals (`AI/RulesV24.md:534`, `AI/RulesV24.md:535`).
 - **Visit the Emperor rewritten**:
   - V22: tribute action with unresolved once/game vs once/turn conflict (`AI/rulesV22.md:633`, `AI/rulesV22.md:649`, `AI/rulesV22.md:654`).
   - V24.1: marker-based once-per-match right with two explicit timings:
     - proactive window only at start of your turn (after refill, before first card),
-    - if deck exhausts during a required draw, perform normal reshuffle and lose Emperor right if still unused (`AI/rulesV24-update.md:565`, `AI/rulesV24-update.md:577`, `AI/rulesV24-update.md:589`).
+    - if deck exhausts during a required draw, perform normal reshuffle and lose Emperor right if still unused (`AI/RulesV24.md:565`, `AI/RulesV24.md:577`, `AI/RulesV24.md:589`).
 
 ---
 
 ## 8) Scoring Differences
 - **Connected-only scoring explicitly enforced in V24**:
-  - V24 excludes disconnected cards/structures from score (`AI/rulesV24-update.md:669`, `AI/rulesV24-update.md:670`).
+  - V24 excludes disconnected cards/structures from score (`AI/RulesV24.md:669`, `AI/RulesV24.md:670`).
   - V22 leaves this as a question point (`AI/rulesV22.md:742`).
 - **Daimyo rank points removed from V24 standard score block**:
   - V22 includes `+1 per Daimyo rank` (`AI/rulesV22.md:730`).
-  - V24 standard scoring block does not include that line (`AI/rulesV24-update.md:651`-`AI/rulesV24-update.md:657`).
+  - V24 standard scoring block does not include that line (`AI/RulesV24.md:651`-`AI/RulesV24.md:657`).
 - **Expert bonus added in V24**:
-  - `+1` if Emperor reshuffle right unused (`AI/rulesV24-update.md:657`).
+  - `+1` if Emperor reshuffle right unused (`AI/RulesV24.md:657`).
 - **Capital value increased in V24.1**:
   - Capital score is now +3 (Standard and Duels).
 - **Shogun scoring wording tightened**:
@@ -179,7 +179,7 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
 ## 9) Duels (2P) Redesign
 - **Seppuku special rule removed from active Duels ruleset**:
   - V22 includes Seppuku (`AI/rulesV22.md:818`).
-  - V24 Duels uses same core Koku/protection framework as standard (`AI/rulesV24-update.md:747`).
+  - V24 Duels uses same core Koku/protection framework as standard (`AI/RulesV24.md:747`).
 - **Duels tie-break explicitly defined in V24**:
   - Duels now follows the same global tie-break: remaining Koku on Player Board -> shared victory.
 - **Duels closure aligned with Candidate Confirmation**:
@@ -204,4 +204,4 @@ _Compared files: `AI/rulesV22.md` and `AI/rulesV24-update.md`_
 ---
 
 ## 11) Important Note
-- `AI/rulesV24-update.md` still contains an internal TODO block (`# NOTE TO TEST/ADD:`), so the file is richer than V22 but not fully “clean final print” yet.
+- `AI/RulesV24.md` still contains an internal TODO block (`# NOTE TO TEST/ADD:`), so the file is richer than V22 but not fully “clean final print” yet.
