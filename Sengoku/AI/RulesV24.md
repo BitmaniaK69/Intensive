@@ -1071,14 +1071,58 @@ END OF RULEBOOK / INTERNAL DESIGN NOTES BELOW
 
 ---
 
+## PLAYTEST LOG - 2026-02-13 (V24.0)
+Sengoku Match 13/02/2026 - V24.0
+
+Players / clans:
+- Fabrizio (TI - Tokugawa Ieyasu) - SHOGUN - WINNER
+- Daniele (TH - Toyotomi Hideyoshi)
+- Kimi (AM - Akechi Mitsuhide) - SHOGUN
+- Marco (ON - Oda Nobunaga)
+
+Final scores:
+- Fabrizio (TI): 14 pt - WINNER
+- Marco (ON): 8 pt
+- Kimi (AM): 13 pt
+- Daniele (TH): 11 pt
+(no need to count Koku)
+
+Rules tested in this match (relative to later V24.1):
+- V24.0 flow with same Koku distribution used later in V24 tests.
+- Players could continue playing down to 1 card in hand (optional) without paying 1 Koku for the last card.
+- Error correction reward still used Koku (later changed to Protection token reward).
+
+Opening / table pattern observations:
+- The game went very very well overall.
+- There was a strong feeling of "too many cards played" because players often kept going down to 1 card.
+- Early turns showed very symmetric openings toward the center.
+- Two Daimyo started from more central starting positions (2nd player Akechi, 4th player Tokugawa).
+- Despite central openings, the winner (Tokugawa) won from a corner start.
+- All players completed the Mission objective (+2 points).
+
+Positives observed:
+- Match pace and overall experience felt very good.
+- The match structure produced strong competition despite symmetric openings.
+
+Balance concerns / follow-up notes:
+- Too many playable cards per turn may increase symmetry in the opening.
+- Imperial zones tested with success but need review.
+
+---
+
 ## PLAYTEST LOG - 2026-02-20 (V24)
 Sengoku Match 20/02/2026 - V24
 
 Final scores:
 - Daniele (AM): 14 pt (+4 Koku) (+2 pt mission)
 - Kazuo (TI): 14 pt (+6 Koku) (+2 pt mission) - WINNER
-- Gianluca (TH): 14 pt (+2 Koku) (Shogun)
+- Gianluca (TH): 14 pt (+2 Koku) (SHOGUN)
 - Marco (ON): 13 pt (+5 Koku) (+2 pt mission)
+
+Starting order / setup notes:
+- Turn order: 1) Marco (ON), 2) Daniele (AM), 3) Kazuo (TI), 4) Gianluca (TH).
+- No player started from a central starting position in this match.
+- Kazuo (Tokugawa) won again from a corner start.
 
 Rules tested in this match:
 - Play cards down to 2 in hand, then pay 1 Koku to play the last card.
@@ -1090,12 +1134,19 @@ Negatives observed:
 - Construction pace was very slow.
 - Many stacks/piles formed (also due to difficult placement choices).
 - Retainer cards could not be destroyed by errors.
+- Capital card is useless, and decrease the value of a capital = 2 castles (instead of 3 or more).
 
 Positives observed:
 - Gameplay was fun and engaging.
 - Paying for the last card helped game flow and reduced drag.
 - Traps/reveals created strong interaction and fun moments.
 - More face-down play increased tension and bluffing.
+
+Additional outcome notes:
+- Only Gianluca became Shogun, but did not win on final score.
+- Only Gianluca did not complete the Mission objective (+2 points).
+- This match highlighted a Capital scoring issue at +2: when Capital is formed on a face-up Numbered card, the base card is turned face-down and its direct card point is effectively lost.
+- This observation supported the later scoring change to Capital = +3 in final scoring.
 
 To try in next tests:
 - Increase starting speed with extra Koku (maybe +2 default?).
@@ -1105,4 +1156,5 @@ Candidate changes to evaluate:
 - ~~Reduce Koku storage limit to 6 or 7.~~ [ADOPTED v24.1 -> cap 6]
 - ~~Increase Capital value to +3 in final scoring.~~ [ADOPTED v24.1]
 - ~~Keep no face-down in the center/Imperial Zones.~~ [ADOPTED v24.1]
+- ~~Error correction reward = 1 Koku~~ -> 1 Protection token per corrected Error. [ADOPTED v24.1]
 
