@@ -2,7 +2,7 @@
 _Last updated: 2026-02-22 - V24.1_
 
 This edition is **optimized for readability at the table**.  
-All edge cases, Duels, and long-form explanations are in the **Reference Edition**.
+All edge cases, Duels, and long-form explanations are in the official rules: **`AI/RulesV24.md`**.
 
 ---
 
@@ -122,7 +122,7 @@ Depending on icon/text, a Retainer is either:
 Some Retainers can stack or cover cards if their text allows it.
 - Retainer **Order Actions** are separate from turn procedures (Reveal, Convert Koku, Build, Error Fix).
 
-> Full Retainer action list is in the **Reference Edition** appendix.
+> Full Retainer action list is in **`AI/RulesV24.md`**.
 
 ---
 
@@ -236,7 +236,7 @@ Rules:
 
 ---
 
-## 12) What’s in the Reference Edition
+## 12) What’s in `AI/RulesV24.md`
 - Full Retainer actions and timing notes
 - Expert Mode (Alliances, Visit the Emperor, Destiny Path)
 - Duels (2 players)
