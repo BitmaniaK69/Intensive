@@ -54,6 +54,8 @@ Purpose:
 - `hand.low_koku_two_cards_penalty`, `hand.penultimate_no_reason_penalty` -> `RM-012`
 - `error.visible_fix_priority`, `phase.end_visible_error_penalty`, `phase.end_when_clean_bonus` -> `RM-011`
 - `hidden_info.own_reveal_error_penalty`, `hidden_info.own_reveal_error_mistake` -> `RM-022`
+- `error.no_token_capacity_penalty` -> `RM-023`
+- `retainer.sam.a1.multi_threat_combo`, `retainer.ash.a1.double_remove_value`, `retainer.cha.a1.deck_value_window`, `retainer.ron.a2.connected_build_denial` -> `RM-024`
 - `retainer.sam.a1.*`, `retainer.sam.a2.*`, `retainer.ash.a1.*`, `retainer.ash.a2.*`, `retainer.cha.a1.*`, `retainer.cha.a2.*`, `retainer.soe.a1.*`, `retainer.soe.a2.*`, `retainer.shi.a1.*`, `retainer.shi.a2.*`, `retainer.ron.a1.*`, `retainer.ron.a2.*` -> `RM-020`
 - `retainer.shi.a2.trap_mode`, `retainer.ron.a2.trap_mode` -> `RM-021`
 
@@ -83,6 +85,20 @@ Purpose:
 | RM-020 | `PRI-1*/PRI-2*/PRI-3*` | `AI/RETAINER_AUTO_STRATEGY_V24.md` | Add contextual AI scoring for Retainer actions (`A121..A162`, excluding trap-only windows) using explicit TOML keys and doc-tag traceability. | Adopted in Code | `sengoku_v24_core.h`: retainer context scoring block in `ScorePossibleMoveForBehavior`; `sengoku_v24_ai_priority_config.toml`: new `retainer.*` point keys; runtime logs show `[Axxx]` tags via key mapping. |
 | RM-021 | `PRI-1*` | `AI/RETAINER_AUTO_STRATEGY_V24.md` + user confirmation | Implement trap-mode reveal windows for `Shinobi A2` (`A152`) and `Ronin A2` (`A160`) with primary target = current revealer, including self-reveal error path. | Adopted in Code | `sengoku_v24_core.h`: trap metadata on face-down tops, trap-capable retainer face-down placement, reveal trigger resolver (`ResolveTrapOnReveal`), and `retainer.shi.a2.trap_mode` / `retainer.ron.a2.trap_mode` scoring; `sengoku_v24_ai_priority_config.toml` updated. |
 | RM-022 | `PRI-3*` | User clarification | Revealing own face-down card is an error-path move: AI should heavily penalize it and allow only as rare intentional mistake according to behavior config. | Adopted in Code | `sengoku_v24_core.h`: `ScorePossibleMoveForBehavior` applies `hidden_info.own_reveal_error_penalty` + gated `hidden_info.own_reveal_error_mistake` bonus from `intentionalErrorChancePct`; `sengoku_v24_ai_priority_config.toml` contains both weights. |
+| RM-023 | `PRI-1*` | Loop/stall stabilization | If token capacity is full, `Declare Error` should be heavily deprioritized to avoid rewardless reveal/error cycles. | Adopted in Code | `sengoku_v24_core.h`: `ScorePossibleMoveForBehavior` applies raw penalty key `error.no_token_capacity_penalty`; configured in `sengoku_v24_ai_priority_config.toml`. |
+| RM-024 | `PRI-1*/PRI-2*` | Gameplay strategy depth | Add richer contextual scoring for Samurai/Ashigaru/Tea/Ronin tactical windows (multi-threat swing, double remove, deck-value draw window, connected build denial). | Adopted in Code | `sengoku_v24_core.h`: retainer scoring block now adds keys `retainer.sam.a1.multi_threat_combo`, `retainer.ash.a1.double_remove_value`, `retainer.cha.a1.deck_value_window`, `retainer.ron.a2.connected_build_denial`; TOML defaults added. |
+| RM-025 | `PRI-1*` | Hidden-info safety | AI with `intentionalErrorChancePct=0` should not self-reveal own face-down cards if other legal moves exist. | Adopted in Code | `sengoku_v24_core.h`: `TryRunAiSingleMove` filters own-reveal candidates for AI seats unless no alternatives remain. |
+
+## Proposed (PROP-X) Awaiting ADD-X
+
+| PROP ID | Proposal | Status |
+|---|---|---|
+| PROP-1 | Samurai A1 combined swing score (cards/tokens/zone-line denial) | Pending user ADD |
+| PROP-2 | Shinobi A2 target by projected short-term score growth | Pending user ADD |
+| PROP-3 | Sohei A1 anti-self-blocking overlap near own build path | Pending user ADD |
+| PROP-4 | Ronin A1 pile-value delta scoring (recover vs deny) | Pending user ADD |
+| PROP-5 | Tea/Cha A2 immediate-play unlock priority (mandatory build/protection) | Pending user ADD |
+| PROP-6 | Numbered global placement with opponent-counterplay risk score | Pending user ADD |
 
 ## Notes
 

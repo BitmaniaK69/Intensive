@@ -162,6 +162,9 @@ Implementation note:
 - `PRI-2*`: if AI has no legal move in MAIN and hand is still `>2`, allow deterministic fallback discard (lowest tactical value card) to avoid deadlock. [A178] [code-logic]
 - `PRI-3*`: revealing own face-down card is an error path and should be strongly penalized; allow only as rare intentional mistake behavior. [A179] [hidden_info.own_reveal_error_penalty=22]
 - `PRI-3*`: if intentional-error roll triggers, self-reveal may re-enter candidate pool at low frequency. [A179] [hidden_info.own_reveal_error_mistake=22]
+- `PRI-1*`: when token capacity is full, `Declare Error` should be heavily penalized (no reward capacity) to avoid non-productive loops. [A184] [error.no_token_capacity_penalty=22]
+- `PRI-1*`: when MAIN legal moves are hidden-info only and hand is `>2`, AI should fallback-discard deterministically to recover turn flow. [A185] [code-logic]
+- `PRI-1*`: for AI seats with `intentionalErrorChancePct=0`, own face-down reveal candidates are filtered out when alternative legal moves exist. [A186] [code-logic]
 
 ## 5) Per-Card Strategy
 
@@ -179,6 +182,7 @@ Notation:
   - `PRI-1*`: when chain cannot expand otherwise and overlap-own-at-border can remove key adjacent blocker. [A121] [retainer.sam.a1.chain_break=11]
   - `PRI-2*`: when opponent has critical adjacent protection token (especially near Castle/Capital timing). [A122] [retainer.sam.a1.token_threat=7]
   - `PRI-3*`: general disruption when no direct expansion gain. [A123] [retainer.sam.a1.disrupt=4]
+  - `PRI-1*`: when one placement can threaten multiple adjacent removals (cards/tokens), prioritize multi-threat swing. [A180] [retainer.sam.a1.multi_threat_combo=11]
 
 `A2` (Reactive interrupt)
 - Baseline:
@@ -196,6 +200,7 @@ Notation:
   - `PRI-1*`: when removal opens immediate expansion into freed cells. [A128] [retainer.ash.a1.open_expansion=11]
   - `PRI-2*`: when removal reduces opponent zone completion risk. [A129] [retainer.ash.a1.zone_denial=7]
   - `PRI-3*`: tactical cleanup without immediate follow-up gain. [A130] [retainer.ash.a1.cleanup=4]
+  - `PRI-1*`: when two removals are available from the same placement, prioritize double-remove value. [A181] [retainer.ash.a1.double_remove_value=11]
 
 `A2` (Look 4, keep 1, route others top/bottom)
 - Priorities:
@@ -211,6 +216,7 @@ Notation:
   - `PRI-1*`: late game (final-turn tempo/value). [A135] [retainer.cha.a1.late_game=11]
   - `PRI-2*`: early phase if Imperial position race is active. [A136] [retainer.cha.a1.early_imperial_race=7]
   - `PRI-2*`: when hand contains other retainers that synergize with extra draw. [A137] [retainer.cha.a1.retainer_synergy=7]
+  - `PRI-2*`: when deck is still deep and discard has value (`deck>=8`, `discard>=2`), draw window is favorable. [A182] [retainer.cha.a1.deck_value_window=7]
 
 `A2` (Draw 1 + immediate play)
 - Priorities:
@@ -264,6 +270,7 @@ Notation:
   - `PRI-1*`: early game (`turn < 5`) when token economy is sparse. [A158] [retainer.ron.a2.early_sparse_economy=11]
   - `PRI-1*`: when you are at `2 Castles` and one more protection step materially accelerates Capital path. [A159] [retainer.ron.a2.castle_to_capital=11]
   - `PRI-1*`: use face-down trap mode for hidden token-swing threat. [A160] [retainer.ron.a2.trap_mode=11]
+  - `PRI-1*`: when opponents have connected protection/build pressure (`>=2` connected token pressure), prioritize denial swing. [A183] [retainer.ron.a2.connected_build_denial=11]
   - `PRI-2*`: when opponents have 1-2 exposed board tokens and you can convert swing immediately. [A161] [retainer.ron.a2.exposed_enemy_tokens=7]
   - `PRI-3*`: pressure play when table has many face-down cards and visibility is low. [A162] [retainer.ron.a2.facedown_pressure=4]
 
@@ -289,3 +296,12 @@ Notation:
 - `PRI-1*`: avoid playing penultimate card (`2 -> 1`) without strong reason (chain/zone/line progress). [A169] [hand.penultimate_no_reason_penalty=22]
 - `PRI-1*`: prioritize Castle build when at `2 Castles` and legal path to Capital timing exists. [A170] [build.castle_capital_path=11]
 - `PRI-2*`: prefer early Market stabilization when `Koku` is low and Market not built. [A171] [build.market_early_economy=7]
+
+## 8) Proposed Gameplay Strategies (PROP-X, pending ADD-X)
+
+- `PROP-1`: `Samurai A1` evaluate combined swing (`adjacent removable cards + token threat + zone/line denial`) before selecting target.
+- `PROP-2`: `Shinobi A2` target priority by projected short-term score growth (`next 1-2 turns`) rather than static board share only.
+- `PROP-3`: `Sohei A1` overlap policy should avoid self-blocking build paths (especially near own 2-castle state).
+- `PROP-4`: `Ronin A1` should score stack replacement by “pile value delta” (recover-own useful card vs deny-opponent useful card).
+- `PROP-5`: `Tea/Cha A2` should prefer immediate-play candidates that unlock mandatory build/protection states this turn.
+- `PROP-6`: global Numbered placement should include opponent-counterplay risk score (how easily adjacent enemies can break the new line).
