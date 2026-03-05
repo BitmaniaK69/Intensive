@@ -64,10 +64,10 @@ Multiple choice allowed. More than one option may be combined in the same test.
 - [ ] Full Daimyo reserve (`3` tokens) = `+1 Koku` at end of turn
 - [ ] If you have `1 Castle`, the paid last card costs `0 Koku`
 - [ ] Domain size bonus: `+1 Koku` if connected chain reaches `X` cards (`7/8/9`)
-- [ ] Build rebate: when building a Castle, immediately park `+1 Koku`
+- [ ] Build rebate: when building a Castle, immediately get `+1 Koku`
 - [ ] All 4 Imperial Zones controlled = `+1 Koku`
 - [ ] Market costs `2 Protection tokens` (instead of `3`)
-- [ ] Market income = `+2 Koku` (instead of `+1`)
+- [ ] Market income gives `+2 Koku` (instead of `+1`)
 - [ ] Increase Koku storage cap: `6 -> 7`
 - [ ] Market increases Koku storage cap by `+1`
 - [ ] Rice Zone rule: Market or Castle on a Rice Zone grants `+1 Koku`
