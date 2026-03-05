@@ -1183,3 +1183,22 @@ Clarified simulation behavior:
 Rulebook cleanup impact:
 - No immediate core-rule text change required.
 - Keep explicit "simulator policy vs pending trap-window final wording" note in testing appendix.
+
+### C-057 - AI Analysis breakpoints for rule-tag frequency in seed sweeps
+
+Observed ambiguity:
+- It was hard to quantify how often a specific strategy rule/tag (for example `A180`) was actually used across large sweeps.
+
+Clarified simulation behavior:
+- AI Analysis now includes a closed-by-default `Breakpoints` tree for rule-tag counters.
+- Up to 6 tags can be configured (`max 5 chars` each, e.g. `A180`).
+- Empty slots are ignored.
+- Counters are computed from AI chosen-rule usage tracking (not only from visible logs), so they work in fast batch mode too.
+- For each configured tag:
+  - `Hits` = total occurrences across matches,
+  - `Match %` = matches where tag appeared at least once / total matches,
+  - `Avg hit/match` = `Hits / total matches`.
+
+Rulebook cleanup impact:
+- No direct rule text change.
+- Testing appendix should recommend breakpoint counters for verifying strategy frequency assumptions.
