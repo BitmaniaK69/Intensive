@@ -6,3 +6,9 @@
 !/Sengoku/AI/
 /Sengoku/AI/*
 !/Sengoku/AI/*.md
+!/Sengoku/AI/v25/
+/Sengoku/AI/v25/*
+!/Sengoku/AI/v25/*.md
+!/Sengoku/AI/v26/
+/Sengoku/AI/v26/*
+!/Sengoku/AI/v26/*.md
