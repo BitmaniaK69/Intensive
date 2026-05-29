@@ -101,45 +101,46 @@ Use this scenario to observe:
 ### Colour mapping
 
 ```text
-ON = Red    🔴
-TH = Green  🟢
-TI = Yellow 🟡
-AM = Blue   🔵
+ON = Red    🔴 / 🟥
+TH = Green  🟢 / 🟩
+TI = Yellow 🟡 / 🟨
+AM = Blue   🔵 / 🟦
 ```
 
 ### Compact board notation
 
-Plain Markdown cannot reliably display a white number on a coloured background, so this setup uses a compact suffix notation.
+Use circles only for Daimyo, squares for face-up cards, diamonds for face-down cards, and a small mark for Protection.
 
 ```text
 ⬜    = empty normal space, printable as light grey if preferred
 ◉    = empty Disputed Space / Imperial-style centre marker
 🔵    = AM Daimyo
-5🔵   = AM face-up Prefecture 5
-?🔵   = AM face-down card
-ᵖ     = Protection token on that card
+🟦5   = AM face-up Prefecture 5
+◆🔵   = AM face-down card
+✦     = Protection token on that card
 •     = the card is on a Disputed Space
 ```
 
 Examples:
 
 ```text
-🔵ᵖ   = AM Daimyo with 1 Protection token
-4🔴ᵖ  = ON Prefecture 4 with 1 Protection token
-6🟢•  = TH Prefecture 6 on a Disputed Space
-?🟡   = TI face-down card
+🔵✦   = AM Daimyo with 1 Protection token
+🟥4✦  = ON Prefecture 4 with 1 Protection token
+🟩6•  = TH Prefecture 6 on a Disputed Space
+◆🟡   = TI face-down card
 ```
 
 ### Visual board after setup
 
 ```text
-      1     2      3      4      5      6
-A     ⬜    ⬜     ⬜     ⬜     ⬜     ⬜
-B     ⬜    🔵ᵖ    ?🔵    ?🔴    🔴ᵖ    ⬜
-C     ⬜    2🔵ᵖ   5🔵•   1🔴•   4🔴ᵖ   ⬜
-D     ⬜    3🟢ᵖ   6🟢•   2🟡•   5🟡ᵖ   ⬜
-E     ⬜    🟢ᵖ    ?🟢    ?🟡    🟡ᵖ    ⬜
-F     ⬜    ⬜     ⬜     ⬜     ⬜     ⬜
+|   | 1 | 2   | 3   | 4   | 5   | 6 |
+|---|---|-----|-----|-----|-----|---|
+| A | ⬜ | ⬜  | ⬜  | ⬜  | ⬜  | ⬜ |
+| B | ⬜ | 🔵✦ | ◆🔵 | ◆🔴 | 🔴✦ | ⬜ |
+| C | ⬜ | 🟦2✦| 🟦5•| 🟥1•| 🟥4✦| ⬜ |
+| D | ⬜ | 🟩3✦| 🟩6•| 🟨2•| 🟨5✦| ⬜ |
+| E | ⬜ | 🟢✦ | ◆🟢 | ◆🟡 | 🟡✦ | ⬜ |
+| F | ⬜ | ⬜  | ⬜  | ⬜  | ⬜  | ⬜ |
 ```
 
 Disputed Spaces:
@@ -177,17 +178,17 @@ This mapping is currently marked as **TO CONFIRM AGAINST PHYSICAL CARDS**.
 
 ---
 
-## AM - Akechi Mitsuhide 🔵
+## AM - Akechi Mitsuhide 🔵 / 🟦
 
 Role: first player, centre pressure, trap/facedown tension.
 
 Starting board:
 
 ```text
-B2: 🔵ᵖ   AM Daimyo + 1 Protection
-B3: ?🔵   AM face-down card
-C2: 2🔵ᵖ  AM Prefecture 2 + 1 Protection
-C3: 5🔵•  AM Prefecture 5 on Disputed Space
+B2: 🔵✦   AM Daimyo + 1 Protection
+B3: ◆🔵   AM face-down card
+C2: 🟦2✦  AM Prefecture 2 + 1 Protection
+C3: 🟦5•  AM Prefecture 5 on Disputed Space
 ```
 
 Starting Koku:
@@ -219,17 +220,17 @@ AM should be tempted to play a second card, but doing so competes with Protectio
 
 ---
 
-## ON - Oda Nobunaga 🔴
+## ON - Oda Nobunaga 🔴 / 🟥
 
 Role: military pressure, direct expansion, Castle path.
 
 Starting board:
 
 ```text
-B4: ?🔴   ON face-down card
-B5: 🔴ᵖ   ON Daimyo + 1 Protection
-C4: 1🔴•  ON Prefecture 1 on Disputed Space
-C5: 4🔴ᵖ  ON Prefecture 4 + 1 Protection
+B4: ◆🔴   ON face-down card
+B5: 🔴✦   ON Daimyo + 1 Protection
+C4: 🟥1•  ON Prefecture 1 on Disputed Space
+C5: 🟥4✦  ON Prefecture 4 + 1 Protection
 ```
 
 Starting Koku:
@@ -261,17 +262,17 @@ ON should demonstrate whether Samurai pressure is clear and whether building is 
 
 ---
 
-## TH - Toyotomi Hideyoshi 🟢
+## TH - Toyotomi Hideyoshi 🟢 / 🟩
 
 Role: economy, Market pressure, flexible card flow.
 
 Starting board:
 
 ```text
-D2: 3🟢ᵖ  TH Prefecture 3 + 1 Protection
-D3: 6🟢•  TH Prefecture 6 on Disputed Space
-E2: 🟢ᵖ   TH Daimyo + 1 Protection
-E3: ?🟢   TH face-down card
+D2: 🟩3✦  TH Prefecture 3 + 1 Protection
+D3: 🟩6•  TH Prefecture 6 on Disputed Space
+E2: 🟢✦   TH Daimyo + 1 Protection
+E3: ◆🟢   TH face-down card
 ```
 
 Starting Koku:
@@ -303,17 +304,17 @@ This makes Market immediately relevant after a card/Protection play, but TH can 
 
 ---
 
-## TI - Tokugawa Ieyasu 🟡
+## TI - Tokugawa Ieyasu 🟡 / 🟨
 
 Role: defensive control, Rebellion awareness, tactical punishment.
 
 Starting board:
 
 ```text
-D4: 2🟡•  TI Prefecture 2 on Disputed Space
-D5: 5🟡ᵖ  TI Prefecture 5 + 1 Protection
-E4: ?🟡   TI face-down card
-E5: 🟡ᵖ   TI Daimyo + 1 Protection
+D4: 🟨2•  TI Prefecture 2 on Disputed Space
+D5: 🟨5✦  TI Prefecture 5 + 1 Protection
+E4: ◆🟡   TI face-down card
+E5: 🟡✦   TI Daimyo + 1 Protection
 ```
 
 Starting Koku:
@@ -352,10 +353,10 @@ Players must not inspect their own face-down cards once the scenario begins.
 Recommended first run:
 
 ```text
-B3: ?🔵 = AM Ronin Trap
-B4: ?🔴 = ON Prefecture 5
-E3: ?🟢 = TH Prefecture 4
-E4: ?🟡 = TI Shinobi Trap
+B3: ◆🔵 = AM Ronin Trap
+B4: ◆🔴 = ON Prefecture 5
+E3: ◆🟢 = TH Prefecture 4
+E4: ◆🟡 = TI Shinobi Trap
 ```
 
 Purpose:
@@ -416,22 +417,23 @@ Remove TH from the game:
 ```text
 Remove TH deck, kit, hand, first draw, and all TH board cards.
 Remove:
-D2: 3🟢ᵖ
-D3: 6🟢•
-E2: 🟢ᵖ
-E3: ?🟢
+D2: 🟩3✦
+D3: 🟩6•
+E2: 🟢✦
+E3: ◆🟢
 ```
 
 3-player visual board after removing TH:
 
 ```text
-      1     2      3      4      5      6
-A     ⬜    ⬜     ⬜     ⬜     ⬜     ⬜
-B     ⬜    🔵ᵖ    ?🔵    ?🔴    🔴ᵖ    ⬜
-C     ⬜    2🔵ᵖ   5🔵•   1🔴•   4🔴ᵖ   ⬜
-D     ⬜    ⬜     ◉      2🟡•   5🟡ᵖ   ⬜
-E     ⬜    ⬜     ⬜     ?🟡    🟡ᵖ    ⬜
-F     ⬜    ⬜     ⬜     ⬜     ⬜     ⬜
+|   | 1 | 2   | 3   | 4   | 5   | 6 |
+|---|---|-----|-----|-----|-----|---|
+| A | ⬜ | ⬜  | ⬜  | ⬜  | ⬜  | ⬜ |
+| B | ⬜ | 🔵✦ | ◆🔵 | ◆🔴 | 🔴✦ | ⬜ |
+| C | ⬜ | 🟦2✦| 🟦5•| 🟥1•| 🟥4✦| ⬜ |
+| D | ⬜ | ⬜  | ◉   | 🟨2•| 🟨5✦| ⬜ |
+| E | ⬜ | ⬜  | ⬜  | ◆🟡 | 🟡✦ | ⬜ |
+| F | ⬜ | ⬜  | ⬜  | ⬜  | ⬜  | ⬜ |
 ```
 
 Keep AM, ON, and TI as written for the first test.
@@ -439,10 +441,10 @@ Keep AM, ON, and TI as written for the first test.
 If TI feels isolated, use this alternative TI board:
 
 ```text
-D3: 2🟡•  TI Prefecture 2 on Disputed Space
-D4: 5🟡•  TI Prefecture 5 on Disputed Space
-E4: ?🟡   TI face-down card
-E5: 🟡ᵖ   TI Daimyo + 1 Protection
+D3: 🟨2•  TI Prefecture 2 on Disputed Space
+D4: 🟨5•  TI Prefecture 5 on Disputed Space
+E4: ◆🟡   TI face-down card
+E5: 🟡✦   TI Daimyo + 1 Protection
 ```
 
 Important: if using the alternative, TI has no Protection token on the moved Prefecture because Disputed Spaces cannot have tokens. Redesign the token placement and re-check Rebellions before starting.
@@ -502,10 +504,10 @@ Use if Rebellions are not happening often enough.
 Replace hidden cards with:
 
 ```text
-B3: ?🔵 = AM Prefecture 3
-B4: ?🔴 = ON Prefecture 5
-E3: ?🟢 = TH Prefecture 4
-E4: ?🟡 = TI Prefecture 1
+B3: ◆🔵 = AM Prefecture 3
+B4: ◆🔴 = ON Prefecture 5
+E3: ◆🟢 = TH Prefecture 4
+E4: ◆🟡 = TI Prefecture 1
 ```
 
 This removes the initial Traps and makes face-down cards more likely to become numbered Rebellion threats when flipped.
