@@ -98,49 +98,55 @@ Use this scenario to observe:
 
 ## Scenario A - Initial Board
 
-### Colour mapping
+### Colour / clan mapping
+
+The board uses one-letter colour codes to keep every cell at **max 2 characters**.
 
 ```text
-ON = Red    🔴 / 🟥
-TH = Green  🟢 / 🟩
-TI = Yellow 🟡 / 🟨
-AM = Blue   🔵 / 🟦
+B = Blue   = AM - Akechi Mitsuhide
+R = Red    = ON - Oda Nobunaga
+G = Green  = TH - Toyotomi Hideyoshi
+Y = Yellow = TI - Tokugawa Ieyasu
 ```
 
-### Compact board notation
-
-Use circles only for Daimyo, squares for face-up cards, diamonds for face-down cards, and a small mark for Protection.
+### Two-character board notation
 
 ```text
-⬜    = empty normal space, printable as light grey if preferred
-◉    = empty Disputed Space / Imperial-style centre marker
-🔵    = AM Daimyo
-🟦5   = AM face-up Prefecture 5
-◆🔵   = AM face-down card
-✦     = Protection token on that card
-•     = the card is on a Disputed Space
+.. = empty normal space
+@@ = empty Disputed Space / Imperial-style centre marker
+B● = Blue / AM Daimyo, not protected
+b● = Blue / AM Daimyo, protected
+B5 = Blue / AM face-up Prefecture 5, not protected
+b5 = Blue / AM face-up Prefecture 5, protected
+B? = Blue / AM face-down card
 ```
 
-Examples:
+Protection is encoded by lowercase clan letter:
 
 ```text
-🔵✦   = AM Daimyo with 1 Protection token
-🟥4✦  = ON Prefecture 4 with 1 Protection token
-🟩6•  = TH Prefecture 6 on a Disputed Space
-◆🟡   = TI face-down card
+B5 = unprotected Blue Prefecture 5
+b5 = protected Blue Prefecture 5
+B● = unprotected Blue Daimyo
+b● = protected Blue Daimyo
 ```
+
+Face-down cards do not show Protection in this scenario because face-down cards cannot receive Protection.
 
 ### Visual board after setup
 
+This version deliberately gives each player one branch toward the outer row and one branch toward the centre. The centre is threatened but not fully occupied at setup.
+
 ```text
-|   | 1 | 2   | 3   | 4   | 5   | 6 |
-|---|---|-----|-----|-----|-----|---|
-| A | ⬜ | ⬜  | ⬜  | ⬜  | ⬜  | ⬜ |
-| B | ⬜ | 🔵✦ | ◆🔵 | ◆🔴 | 🔴✦ | ⬜ |
-| C | ⬜ | 🟦2✦| 🟦5•| 🟥1•| 🟥4✦| ⬜ |
-| D | ⬜ | 🟩3✦| 🟩6•| 🟨2•| 🟨5✦| ⬜ |
-| E | ⬜ | 🟢✦ | ◆🟢 | ◆🟡 | 🟡✦ | ⬜ |
-| F | ⬜ | ⬜  | ⬜  | ⬜  | ⬜  | ⬜ |
+|  |1 |2 |3 |4 |5 |6 |
+|--|--|--|--|--|--|--|
+|A |..|b2|..|..|r4|..|
+|B |B?|b●|..|..|r●|R?|
+|--+--+--+--+--+--+--|
+|C |..|B5|@@|@@|R1|..|
+|D |..|G6|@@|@@|Y2|..|
+|--+--+--+--+--+--+--|
+|E |G?|g●|..|..|y●|Y?|
+|F |..|g3|..|..|y5|..|
 ```
 
 Disputed Spaces:
@@ -178,17 +184,17 @@ This mapping is currently marked as **TO CONFIRM AGAINST PHYSICAL CARDS**.
 
 ---
 
-## AM - Akechi Mitsuhide 🔵 / 🟦
+## AM - Akechi Mitsuhide / Blue / B
 
 Role: first player, centre pressure, trap/facedown tension.
 
 Starting board:
 
 ```text
-B2: 🔵✦   AM Daimyo + 1 Protection
-B3: ◆🔵   AM face-down card
-C2: 🟦2✦  AM Prefecture 2 + 1 Protection
-C3: 🟦5•  AM Prefecture 5 on Disputed Space
+A2: b2  AM Prefecture 2 + 1 Protection
+B1: B?  AM face-down card
+B2: b●  AM Daimyo + 1 Protection
+C2: B5  AM Prefecture 5
 ```
 
 Starting Koku:
@@ -214,23 +220,23 @@ AM Prefecture 2
 Expected dilemma:
 
 ```text
-AM can pressure the centre, use Shinobi, or spend Koku to accelerate.
+AM can expand inward, consolidate the upper-left area, use Shinobi, or spend Koku to accelerate.
 AM should be tempted to play a second card, but doing so competes with Protection/reveal spending.
 ```
 
 ---
 
-## ON - Oda Nobunaga 🔴 / 🟥
+## ON - Oda Nobunaga / Red / R
 
 Role: military pressure, direct expansion, Castle path.
 
 Starting board:
 
 ```text
-B4: ◆🔴   ON face-down card
-B5: 🔴✦   ON Daimyo + 1 Protection
-C4: 🟥1•  ON Prefecture 1 on Disputed Space
-C5: 🟥4✦  ON Prefecture 4 + 1 Protection
+A5: r4  ON Prefecture 4 + 1 Protection
+B5: r●  ON Daimyo + 1 Protection
+B6: R?  ON face-down card
+C5: R1  ON Prefecture 1
 ```
 
 Starting Koku:
@@ -256,23 +262,23 @@ ON Prefecture 5
 Expected dilemma:
 
 ```text
-ON can attack, protect, or build toward Castle.
+ON can attack, protect, build toward Castle, or expand inward from the upper-right side.
 ON should demonstrate whether Samurai pressure is clear and whether building is tempting enough.
 ```
 
 ---
 
-## TH - Toyotomi Hideyoshi 🟢 / 🟩
+## TH - Toyotomi Hideyoshi / Green / G
 
 Role: economy, Market pressure, flexible card flow.
 
 Starting board:
 
 ```text
-D2: 🟩3✦  TH Prefecture 3 + 1 Protection
-D3: 🟩6•  TH Prefecture 6 on Disputed Space
-E2: 🟢✦   TH Daimyo + 1 Protection
-E3: ◆🟢   TH face-down card
+D2: G6  TH Prefecture 6
+E1: G?  TH face-down card
+E2: g●  TH Daimyo + 1 Protection
+F2: g3  TH Prefecture 3 + 1 Protection
 ```
 
 Starting Koku:
@@ -299,22 +305,22 @@ Expected dilemma:
 
 ```text
 TH starts with exactly two Protection tokens in chain.
-This makes Market immediately relevant after a card/Protection play, but TH can also aim toward Castle by adding a third Protection.
+This makes Market relevant after a card/Protection play, but TH can also aim toward Castle by adding a third Protection.
 ```
 
 ---
 
-## TI - Tokugawa Ieyasu 🟡 / 🟨
+## TI - Tokugawa Ieyasu / Yellow / Y
 
 Role: defensive control, Rebellion awareness, tactical punishment.
 
 Starting board:
 
 ```text
-D4: 🟨2•  TI Prefecture 2 on Disputed Space
-D5: 🟨5✦  TI Prefecture 5 + 1 Protection
-E4: ◆🟡   TI face-down card
-E5: 🟡✦   TI Daimyo + 1 Protection
+D5: Y2  TI Prefecture 2
+E5: y●  TI Daimyo + 1 Protection
+E6: Y?  TI face-down card
+F5: y5  TI Prefecture 5 + 1 Protection
 ```
 
 Starting Koku:
@@ -341,7 +347,7 @@ Expected dilemma:
 
 ```text
 TI can play safely, punish exposed cards, or wait for others to create Rebellions.
-TI should feel active without needing to rush the centre immediately.
+TI should feel active while choosing whether to secure the lower-right area or push inward.
 ```
 
 ---
@@ -353,10 +359,10 @@ Players must not inspect their own face-down cards once the scenario begins.
 Recommended first run:
 
 ```text
-B3: ◆🔵 = AM Ronin Trap
-B4: ◆🔴 = ON Prefecture 5
-E3: ◆🟢 = TH Prefecture 4
-E4: ◆🟡 = TI Shinobi Trap
+B1: B? = AM Ronin Trap
+B6: R? = ON Prefecture 5
+E1: G? = TH Prefecture 4
+E6: Y? = TI Shinobi Trap
 ```
 
 Purpose:
@@ -417,37 +423,28 @@ Remove TH from the game:
 ```text
 Remove TH deck, kit, hand, first draw, and all TH board cards.
 Remove:
-D2: 🟩3✦
-D3: 🟩6•
-E2: 🟢✦
-E3: ◆🟢
+D2: G6
+E1: G?
+E2: g●
+F2: g3
 ```
 
 3-player visual board after removing TH:
 
 ```text
-|   | 1 | 2   | 3   | 4   | 5   | 6 |
-|---|---|-----|-----|-----|-----|---|
-| A | ⬜ | ⬜  | ⬜  | ⬜  | ⬜  | ⬜ |
-| B | ⬜ | 🔵✦ | ◆🔵 | ◆🔴 | 🔴✦ | ⬜ |
-| C | ⬜ | 🟦2✦| 🟦5•| 🟥1•| 🟥4✦| ⬜ |
-| D | ⬜ | ⬜  | ◉   | 🟨2•| 🟨5✦| ⬜ |
-| E | ⬜ | ⬜  | ⬜  | ◆🟡 | 🟡✦ | ⬜ |
-| F | ⬜ | ⬜  | ⬜  | ⬜  | ⬜  | ⬜ |
+|  |1 |2 |3 |4 |5 |6 |
+|--|--|--|--|--|--|--|
+|A |..|b2|..|..|r4|..|
+|B |B?|b●|..|..|r●|R?|
+|--+--+--+--+--+--+--|
+|C |..|B5|@@|@@|R1|..|
+|D |..|..|@@|@@|Y2|..|
+|--+--+--+--+--+--+--|
+|E |..|..|..|..|y●|Y?|
+|F |..|..|..|..|y5|..|
 ```
 
 Keep AM, ON, and TI as written for the first test.
-
-If TI feels isolated, use this alternative TI board:
-
-```text
-D3: 🟨2•  TI Prefecture 2 on Disputed Space
-D4: 🟨5•  TI Prefecture 5 on Disputed Space
-E4: ◆🟡   TI face-down card
-E5: 🟡✦   TI Daimyo + 1 Protection
-```
-
-Important: if using the alternative, TI has no Protection token on the moved Prefecture because Disputed Spaces cannot have tokens. Redesign the token placement and re-check Rebellions before starting.
 
 3-player note:
 
@@ -504,10 +501,10 @@ Use if Rebellions are not happening often enough.
 Replace hidden cards with:
 
 ```text
-B3: ◆🔵 = AM Prefecture 3
-B4: ◆🔴 = ON Prefecture 5
-E3: ◆🟢 = TH Prefecture 4
-E4: ◆🟡 = TI Prefecture 1
+B1: B? = AM Prefecture 3
+B6: R? = ON Prefecture 5
+E1: G? = TH Prefecture 4
+E6: Y? = TI Prefecture 1
 ```
 
 This removes the initial Traps and makes face-down cards more likely to become numbered Rebellion threats when flipped.
@@ -586,21 +583,21 @@ Z6 = D5-F6
 Face-up Prefecture cards on board:
 
 ```text
-AM2 at C2
-AM5 at C3
-ON1 at C4
-ON4 at C5
-TH3 at D2
-TH6 at D3
-TI2 at D4
-TI5 at D5
+AM2 at A2
+AM5 at C2
+ON4 at A5
+ON1 at C5
+TH6 at D2
+TH3 at F2
+TI2 at D5
+TI5 at F5
 ```
 
 Duplicated visible numbers at setup:
 
 ```text
-AM2 at C2 and TI2 at D4: not same row, column, or printed area.
-AM5 at C3 and TI5 at D5: not same row, column, or printed area.
+AM2 at A2 and TI2 at D5: not same row, column, or printed area.
+AM5 at C2 and TI5 at F5: not same row, column, or printed area.
 ```
 
 ## Main V26 assumptions used here
