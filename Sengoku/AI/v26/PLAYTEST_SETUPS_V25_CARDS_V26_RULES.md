@@ -112,9 +112,9 @@ TH = Green  🟢 / 🟩
 TI = Yellow 🟡 / 🟨
 ```
 
-### Fixed 3-character board notation
+### Board notation
 
-Every board cell uses a fixed visual token. The token order is:
+The token order is:
 
 ```text
 TYPE + COLOUR + PROTECTION
@@ -123,10 +123,10 @@ TYPE + COLOUR + PROTECTION
 Examples:
 
 ```text
-⬛  = empty normal space
- ◉  = empty Disputed Space / Imperial-style centre marker
- 🔵  = AM Daimyo, unprotected
- 🔵* = AM Daimyo, protected
+⬛   = empty normal space
+⬜   = empty Disputed Space / Imperial-style space if needed
+D🔵  = AM Daimyo, unprotected
+D🔵* = AM Daimyo, protected
 5🟦  = AM face-up Prefecture 5, unprotected
 5🟦* = AM face-up Prefecture 5, protected
 ?🟦  = AM face-down card, always unprotected
@@ -137,9 +137,9 @@ M🟩  = TH Sohei / Warrior Monk, unprotected, top card of a stack
 Same pattern for the other colours:
 
 ```text
- 🔴  /  🔴* / 5🟥  / 5🟥* / ?🟥
- 🟢  /  🟢* / 5🟩  / 5🟩* / ?🟩
- 🟡  /  🟡* / 5🟨  / 5🟨* / ?🟨
+D🔴  / D🔴* / 5🟥  / 5🟥* / ?🟥
+D🟢  / D🟢* / 5🟩  / 5🟩* / ?🟩
+D🟡  / D🟡* / 5🟨  / 5🟨* / ?🟨
 ```
 
 Face-down cards are always unprotected, so they use `?` and do not need a Protection marker.
@@ -149,16 +149,16 @@ Face-down cards are always unprotected, so they use `?` and do not need a Protec
 This version gives each player one branch toward the outer row and one branch toward the centre. ON starts with a protected Samurai already on the board. TH starts with a Sohei / Warrior Monk stacked on top of a Prefecture card, reducing his occupied spaces while keeping the same number of physical cards.
 
 ```text
-|   | 1  | 2   | 3  | 4   | 5   | 6  |
-|---|----|-----|----|-----|-----|----|
-| A |⬛  |2🟦*|⬛  |⬛   |4🟥*|⬛  |
-| B |?🟦 |🔵* |⬛  |S🟥*|🔴* |?🟥 |
-|---+----+-----+----+-----+-----+----|
-| C |⬛  |5🟦 | ◉  | ◉   |1🟥 |⬛  |
-| D |⬛  |M🟩 | ◉  | ◉   |2🟨 |⬛  |
-|---+----+-----+----+-----+-----+----|
-| E |⬛  |🟢* |⬛  |⬛   |🟡* |?🟨 |
-| F |⬛  |6🟩*|⬛  |⬛   |5🟨*|⬛  |
+|   | 1  | 2  | 3 | 4  | 5  | 6  |
+|---|----|----|---|----|----|----|
+| A | ⬛ |2🟦*| ⬛| ⬛ |4🟥*| ⬛ |
+| B |?🟦 |D🔵*| ⬛|S🟥*|D🔴*|?🟥 |
+|---|----|----|---|----|----|----|
+| C | ⬛ |5🟦 | ⬛| ⬛ |1🟥 | ⬛ |
+| D | ⬛ |M🟩 | ⬛| ⬛ |2🟨 | ⬛ |
+|---|----|----|---|----|----|----|
+| E | ⬛ |D🟢*| ⬛| ⬛ |D🟡*|?🟨 |
+| F | ⬛ |6🟩*| ⬛| ⬛ |5🟨*| ⬛ |
 ```
 
 Disputed Spaces:
@@ -206,7 +206,7 @@ Starting board:
 ```text
 A2: 2🟦*  AM Prefecture 2 + 1 Protection
 B1: ?🟦   AM face-down card
-B2: 🔵*   AM Daimyo + 1 Protection
+B2: D🔵*  AM Daimyo + 1 Protection
 C2: 5🟦   AM Prefecture 5
 ```
 
@@ -248,7 +248,7 @@ Starting board:
 ```text
 A5: 4🟥*  ON Prefecture 4 + 1 Protection
 B4: S🟥*  ON Samurai + 1 Protection
-B5: 🔴*   ON Daimyo + 1 Protection
+B5: D🔴*  ON Daimyo + 1 Protection
 B6: ?🟥   ON face-down card
 C5: 1🟥   ON Prefecture 1
 ```
@@ -297,7 +297,7 @@ Starting board:
 
 ```text
 D2: M🟩   TH Sohei / Warrior Monk, unprotected, stacked on top of TH Prefecture 3
-E2: 🟢*   TH Daimyo + 1 Protection
+E2: D🟢*  TH Daimyo + 1 Protection
 F2: 6🟩*  TH Prefecture 6 + 1 Protection
 ```
 
@@ -348,7 +348,7 @@ Starting board:
 
 ```text
 D5: 2🟨   TI Prefecture 2
-E5: 🟡*   TI Daimyo + 1 Protection
+E5: D🟡*  TI Daimyo + 1 Protection
 E6: ?🟨   TI face-down card
 F5: 5🟨*  TI Prefecture 5 + 1 Protection
 ```
@@ -459,23 +459,23 @@ Remove TH from the game:
 Remove TH deck, kit, hand, first draw, and all TH board cards.
 Remove:
 D2: M🟩 stack, including TH Sohei / Warrior Monk and TH Prefecture 3 underneath
-E2: 🟢*
+E2: D🟢*
 F2: 6🟩*
 ```
 
 3-player visual board after removing TH:
 
 ```text
-|   | 1  | 2   | 3  | 4   | 5   | 6  |
-|---|----|-----|----|-----|-----|----|
-| A |⬛  |2🟦*|⬛  |⬛   |4🟥*|⬛  |
-| B |?🟦 |🔵* |⬛  |S🟥*|🔴* |?🟥 |
-|---+----+-----+----+-----+-----+----|
-| C |⬛  |5🟦 | ◉  | ◉   |1🟥 |⬛  |
-| D |⬛  |⬛  | ◉  | ◉   |2🟨 |⬛  |
-|---+----+-----+----+-----+-----+----|
-| E |⬛  |⬛  |⬛  |⬛   |🟡* |?🟨 |
-| F |⬛  |⬛  |⬛  |⬛   |5🟨*|⬛  |
+|   | 1  | 2  | 3 | 4  | 5  | 6  |
+|---|----|----|---|----|----|----|
+| A | ⬛ |2🟦*| ⬛| ⬛ |4🟥*| ⬛ |
+| B |?🟦 |D🔵*| ⬛|S🟥*|D🔴*|?🟥 |
+|---|----|----|---|----|----|----|
+| C | ⬛ |5🟦 | ⬛| ⬛ |1🟥 | ⬛ |
+| D | ⬛ | ⬛ | ⬛| ⬛ |2🟨 | ⬛ |
+|---|----|----|---|----|----|----|
+| E | ⬛ | ⬛ | ⬛| ⬛ |D🟡*|?🟨 |
+| F | ⬛ | ⬛ | ⬛| ⬛ |5🟨*| ⬛ |
 ```
 
 Keep AM, ON, and TI as written for the first test.
