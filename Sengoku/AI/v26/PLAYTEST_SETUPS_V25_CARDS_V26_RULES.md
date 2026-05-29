@@ -9,7 +9,7 @@
 **Default mode:** guided fast scenario  
 **Alliances:** disabled
 
-This document defines pre-built playtest scenarios for running short Sengoku games using V25 cards while testing selected V26 rules.
+This document defines pre-built playtest scenarios for running short Sengoku games using V25 physical cards while testing selected V26 rules.
 
 The document is organised for quick table use first. Detailed notes and design rationale are moved after the playable setup.
 
@@ -98,25 +98,45 @@ Use this scenario to observe:
 
 ## Scenario A - Initial Board
 
-Legend:
+### Colour mapping
 
 ```text
-AM-D = AM Daimyo
-AM2  = AM face-up Prefecture 2
-AM?  = AM face-down card
-[P]  = Protection token on that card
+ON = Red    🔴
+TH = Green  🟢
+TI = Yellow 🟡
+AM = Blue   🔵
 ```
 
-Board after setup:
+### Board notation
 
 ```text
-      1        2        3        4        5        6
-A   .        .        .        .        .        .
-B   .        AM-D[P]  AM?      ON?      ON-D[P]  .
-C   .        AM2[P]   AM5      ON1      ON4[P]   .
-D   .        TH3[P]   TH6      TI2      TI5[P]   .
-E   .        TH-D[P]  TH?      TI?      TI-D[P]  .
-F   .        .        .        .        .        .
+⬜    = empty normal space, printable as light grey if preferred
+◉    = empty Disputed Space / Imperial-style centre marker
+🔵D   = blue Daimyo
+🔵2   = blue face-up Prefecture 2
+🔵?   = blue face-down card
+ᵖ     = Protection token on that card
+•     = the card is on a Disputed Space
+```
+
+Example:
+
+```text
+🔵Dᵖ = AM Daimyo with 1 Protection token
+🔴4ᵖ = ON Prefecture 4 with 1 Protection token
+🟢6• = TH Prefecture 6 on a Disputed Space
+```
+
+### Visual board after setup
+
+```text
+      1     2      3      4      5      6
+A     ⬜    ⬜     ⬜     ⬜     ⬜     ⬜
+B     ⬜    🔵Dᵖ   🔵?    🔴?    🔴Dᵖ   ⬜
+C     ⬜    🔵2ᵖ   🔵5•   🔴1•   🔴4ᵖ   ⬜
+D     ⬜    🟢3ᵖ   🟢6•   🟡2•   🟡5ᵖ   ⬜
+E     ⬜    🟢Dᵖ   🟢?    🟡?    🟡Dᵖ   ⬜
+F     ⬜    ⬜     ⬜     ⬜     ⬜     ⬜
 ```
 
 Disputed Spaces:
@@ -154,17 +174,17 @@ This mapping is currently marked as **TO CONFIRM AGAINST PHYSICAL CARDS**.
 
 ---
 
-## AM - Akechi Mitsuhide
+## AM - Akechi Mitsuhide 🔵
 
 Role: first player, centre pressure, trap/facedown tension.
 
 Starting board:
 
 ```text
-B2: AM Daimyo + 1 Protection
-B3: AM face-down card
-C2: AM Prefecture 2 + 1 Protection
-C3: AM Prefecture 5
+B2: 🔵Dᵖ  AM Daimyo + 1 Protection
+B3: 🔵?   AM face-down card
+C2: 🔵2ᵖ  AM Prefecture 2 + 1 Protection
+C3: 🔵5•  AM Prefecture 5 on Disputed Space
 ```
 
 Starting Koku:
@@ -196,17 +216,17 @@ AM should be tempted to play a second card, but doing so competes with Protectio
 
 ---
 
-## ON - Oda Nobunaga
+## ON - Oda Nobunaga 🔴
 
 Role: military pressure, direct expansion, Castle path.
 
 Starting board:
 
 ```text
-B4: ON face-down card
-B5: ON Daimyo + 1 Protection
-C4: ON Prefecture 1
-C5: ON Prefecture 4 + 1 Protection
+B4: 🔴?   ON face-down card
+B5: 🔴Dᵖ  ON Daimyo + 1 Protection
+C4: 🔴1•  ON Prefecture 1 on Disputed Space
+C5: 🔴4ᵖ  ON Prefecture 4 + 1 Protection
 ```
 
 Starting Koku:
@@ -238,17 +258,17 @@ ON should demonstrate whether Samurai pressure is clear and whether building is 
 
 ---
 
-## TH - Toyotomi Hideyoshi
+## TH - Toyotomi Hideyoshi 🟢
 
 Role: economy, Market pressure, flexible card flow.
 
 Starting board:
 
 ```text
-D2: TH Prefecture 3 + 1 Protection
-D3: TH Prefecture 6
-E2: TH Daimyo + 1 Protection
-E3: TH face-down card
+D2: 🟢3ᵖ  TH Prefecture 3 + 1 Protection
+D3: 🟢6•  TH Prefecture 6 on Disputed Space
+E2: 🟢Dᵖ  TH Daimyo + 1 Protection
+E3: 🟢?   TH face-down card
 ```
 
 Starting Koku:
@@ -280,17 +300,17 @@ This makes Market immediately relevant after a card/Protection play, but TH can 
 
 ---
 
-## TI - Tokugawa Ieyasu
+## TI - Tokugawa Ieyasu 🟡
 
 Role: defensive control, Rebellion awareness, tactical punishment.
 
 Starting board:
 
 ```text
-D4: TI Prefecture 2
-D5: TI Prefecture 5 + 1 Protection
-E4: TI face-down card
-E5: TI Daimyo + 1 Protection
+D4: 🟡2•  TI Prefecture 2 on Disputed Space
+D5: 🟡5ᵖ  TI Prefecture 5 + 1 Protection
+E4: 🟡?   TI face-down card
+E5: 🟡Dᵖ  TI Daimyo + 1 Protection
 ```
 
 Starting Koku:
@@ -329,10 +349,10 @@ Players must not inspect their own face-down cards once the scenario begins.
 Recommended first run:
 
 ```text
-AM B3: AM Ronin Trap
-ON B4: ON Prefecture 5
-TH E3: TH Prefecture 4
-TI E4: TI Shinobi Trap
+B3: 🔵? = AM Ronin Trap
+B4: 🔴? = ON Prefecture 5
+E3: 🟢? = TH Prefecture 4
+E4: 🟡? = TI Shinobi Trap
 ```
 
 Purpose:
@@ -351,7 +371,7 @@ Enough uncertainty to make K3 flip decisions matter.
 Before starting, check:
 
 ```text
-[ ] Board positions match the map.
+[ ] Board positions match the visual map.
 [ ] Each player has K3 available.
 [ ] Each player has exactly 3 cards in hand.
 [ ] Each player's hand includes the non-star copy of their clan-special Retainer.
@@ -393,10 +413,22 @@ Remove TH from the game:
 ```text
 Remove TH deck, kit, hand, first draw, and all TH board cards.
 Remove:
-D2: TH Prefecture 3 + Protection
-D3: TH Prefecture 6
-E2: TH Daimyo + Protection
-E3: TH face-down card
+D2: 🟢3ᵖ
+D3: 🟢6•
+E2: 🟢Dᵖ
+E3: 🟢?
+```
+
+3-player visual board after removing TH:
+
+```text
+      1     2      3      4      5      6
+A     ⬜    ⬜     ⬜     ⬜     ⬜     ⬜
+B     ⬜    🔵Dᵖ   🔵?    🔴?    🔴Dᵖ   ⬜
+C     ⬜    🔵2ᵖ   🔵5•   🔴1•   🔴4ᵖ   ⬜
+D     ⬜    ⬜     ◉      🟡2•   🟡5ᵖ   ⬜
+E     ⬜    ⬜     ⬜     🟡?    🟡Dᵖ   ⬜
+F     ⬜    ⬜     ⬜     ⬜     ⬜     ⬜
 ```
 
 Keep AM, ON, and TI as written for the first test.
@@ -404,13 +436,13 @@ Keep AM, ON, and TI as written for the first test.
 If TI feels isolated, use this alternative TI board:
 
 ```text
-D3: TI Prefecture 2
-D4: TI Prefecture 5 + 1 Protection
-E4: TI face-down card
-E5: TI Daimyo + 1 Protection
+D3: 🟡2•  TI Prefecture 2 on Disputed Space
+D4: 🟡5•  TI Prefecture 5 on Disputed Space + 1 Protection is NOT allowed here
+E4: 🟡?   TI face-down card
+E5: 🟡Dᵖ  TI Daimyo + 1 Protection
 ```
 
-If using the alternative TI board, re-check all Rebellions before starting.
+Important: the above alternative is currently **not recommended** because Disputed Spaces cannot have Protection tokens. If moving TI, redesign the token placement and re-check Rebellions before starting.
 
 3-player note:
 
@@ -467,10 +499,10 @@ Use if Rebellions are not happening often enough.
 Replace hidden cards with:
 
 ```text
-AM B3: AM Prefecture 3
-ON B4: ON Prefecture 5
-TH E3: TH Prefecture 4
-TI E4: TI Prefecture 1
+B3: 🔵? = AM Prefecture 3
+B4: 🔴? = ON Prefecture 5
+E3: 🟢? = TH Prefecture 4
+E4: 🟡? = TI Prefecture 1
 ```
 
 This removes the initial Traps and makes face-down cards more likely to become numbered Rebellion threats when flipped.
