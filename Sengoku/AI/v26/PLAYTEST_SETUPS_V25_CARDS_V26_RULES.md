@@ -9,7 +9,7 @@
 **Default mode:** guided fast scenario  
 **Alliances:** disabled
 
-This document defines pre-built playtest scenarios for running short Sengoku games using V25 physical cards while testing selected V26 rules.
+This document defines pre-built playtest scenarios for running short Sengoku games using V25 cards while testing selected V26 rules.
 
 The document is organised for quick table use first. Detailed notes and design rationale are moved after the playable setup.
 
@@ -114,26 +114,32 @@ TI = Yellow 🟡 / 🟨
 
 ### Fixed 3-character board notation
 
-Every board cell uses a fixed 3-character token inside the table.
+Every board cell uses a fixed visual token. The token order is:
 
 ```text
-    = empty normal space
+TYPE + COLOUR + PROTECTION
+```
+
+Examples:
+
+```text
+⬛  = empty normal space
  ◉  = empty Disputed Space / Imperial-style centre marker
-🔵  = AM Daimyo, unprotected
-🔵* = AM Daimyo, protected
-🟦5 = AM face-up Prefecture 5, unprotected
-🟦5* = AM face-up Prefecture 5, protected
-🟦? = AM face-down card, always unprotected
-🟥S* = ON Samurai, protected
-🟩M = TH Sohei / Warrior Monk, unprotected, top card of a stack
+ 🔵  = AM Daimyo, unprotected
+ 🔵* = AM Daimyo, protected
+5🟦  = AM face-up Prefecture 5, unprotected
+5🟦* = AM face-up Prefecture 5, protected
+?🟦  = AM face-down card, always unprotected
+S🟥* = ON Samurai, protected
+M🟩  = TH Sohei / Warrior Monk, unprotected, top card of a stack
 ```
 
 Same pattern for the other colours:
 
 ```text
-🔴  / 🔴* / 🟥5 / 🟥5* / 🟥?
-🟢  / 🟢* / 🟩5 / 🟩5* / 🟩?
-🟡  / 🟡* / 🟨5 / 🟨5* / 🟨?
+ 🔴  /  🔴* / 5🟥  / 5🟥* / ?🟥
+ 🟢  /  🟢* / 5🟩  / 5🟩* / ?🟩
+ 🟡  /  🟡* / 5🟨  / 5🟨* / ?🟨
 ```
 
 Face-down cards are always unprotected, so they use `?` and do not need a Protection marker.
@@ -145,14 +151,14 @@ This version gives each player one branch toward the outer row and one branch to
 ```text
 |   | 1  | 2   | 3  | 4   | 5   | 6  |
 |---|----|-----|----|-----|-----|----|
-| A |    |🟦2*|    |     |🟥4*|    |
-| B |🟦? |🔵* |    |🟥S*|🔴* |🟥? |
+| A |⬛  |2🟦*|⬛  |⬛   |4🟥*|⬛  |
+| B |?🟦 |🔵* |⬛  |S🟥*|🔴* |?🟥 |
 |---+----+-----+----+-----+-----+----|
-| C |    |🟦5 | ◉  | ◉   |🟥1 |    |
-| D |    |🟩M | ◉  | ◉   |🟨2 |    |
+| C |⬛  |5🟦 | ◉  | ◉   |1🟥 |⬛  |
+| D |⬛  |M🟩 | ◉  | ◉   |2🟨 |⬛  |
 |---+----+-----+----+-----+-----+----|
-| E |    |🟢* |    |     |🟡* |🟨? |
-| F |    |🟩6*|    |     |🟨5*|    |
+| E |⬛  |🟢* |⬛  |⬛   |🟡* |?🟨 |
+| F |⬛  |6🟩*|⬛  |⬛   |5🟨*|⬛  |
 ```
 
 Disputed Spaces:
@@ -198,10 +204,10 @@ Role: first player, centre pressure, trap/facedown tension.
 Starting board:
 
 ```text
-A2: 🟦2*  AM Prefecture 2 + 1 Protection
-B1: 🟦?   AM face-down card
+A2: 2🟦*  AM Prefecture 2 + 1 Protection
+B1: ?🟦   AM face-down card
 B2: 🔵*   AM Daimyo + 1 Protection
-C2: 🟦5   AM Prefecture 5
+C2: 5🟦   AM Prefecture 5
 ```
 
 Starting Koku:
@@ -240,11 +246,11 @@ Role: visible military pressure, protected Retainer, Castle path.
 Starting board:
 
 ```text
-A5: 🟥4*  ON Prefecture 4 + 1 Protection
-B4: 🟥S*  ON Samurai + 1 Protection
+A5: 4🟥*  ON Prefecture 4 + 1 Protection
+B4: S🟥*  ON Samurai + 1 Protection
 B5: 🔴*   ON Daimyo + 1 Protection
-B6: 🟥?   ON face-down card
-C5: 🟥1   ON Prefecture 1
+B6: ?🟥   ON face-down card
+C5: 1🟥   ON Prefecture 1
 ```
 
 Starting Koku:
@@ -290,9 +296,9 @@ Role: economy, Market pressure, compact chain, stacking demonstration.
 Starting board:
 
 ```text
-D2: 🟩M   TH Sohei / Warrior Monk, unprotected, stacked on top of TH Prefecture 3
+D2: M🟩   TH Sohei / Warrior Monk, unprotected, stacked on top of TH Prefecture 3
 E2: 🟢*   TH Daimyo + 1 Protection
-F2: 🟩6*  TH Prefecture 6 + 1 Protection
+F2: 6🟩*  TH Prefecture 6 + 1 Protection
 ```
 
 Stack detail:
@@ -341,10 +347,10 @@ Role: defensive control, Rebellion awareness, tactical punishment.
 Starting board:
 
 ```text
-D5: 🟨2   TI Prefecture 2
+D5: 2🟨   TI Prefecture 2
 E5: 🟡*   TI Daimyo + 1 Protection
-E6: 🟨?   TI face-down card
-F5: 🟨5*  TI Prefecture 5 + 1 Protection
+E6: ?🟨   TI face-down card
+F5: 5🟨*  TI Prefecture 5 + 1 Protection
 ```
 
 Starting Koku:
@@ -383,9 +389,9 @@ Players must not inspect their own face-down cards once the scenario begins.
 Recommended first run:
 
 ```text
-B1: 🟦? = AM Ronin Trap
-B6: 🟥? = ON Prefecture 5
-E6: 🟨? = TI Shinobi Trap
+B1: ?🟦 = AM Ronin Trap
+B6: ?🟥 = ON Prefecture 5
+E6: ?🟨 = TI Shinobi Trap
 ```
 
 Purpose:
@@ -452,9 +458,9 @@ Remove TH from the game:
 ```text
 Remove TH deck, kit, hand, first draw, and all TH board cards.
 Remove:
-D2: 🟩M stack, including TH Sohei / Warrior Monk and TH Prefecture 3 underneath
+D2: M🟩 stack, including TH Sohei / Warrior Monk and TH Prefecture 3 underneath
 E2: 🟢*
-F2: 🟩6*
+F2: 6🟩*
 ```
 
 3-player visual board after removing TH:
@@ -462,14 +468,14 @@ F2: 🟩6*
 ```text
 |   | 1  | 2   | 3  | 4   | 5   | 6  |
 |---|----|-----|----|-----|-----|----|
-| A |    |🟦2*|    |     |🟥4*|    |
-| B |🟦? |🔵* |    |🟥S*|🔴* |🟥? |
+| A |⬛  |2🟦*|⬛  |⬛   |4🟥*|⬛  |
+| B |?🟦 |🔵* |⬛  |S🟥*|🔴* |?🟥 |
 |---+----+-----+----+-----+-----+----|
-| C |    |🟦5 | ◉  | ◉   |🟥1 |    |
-| D |    |    | ◉  | ◉   |🟨2 |    |
+| C |⬛  |5🟦 | ◉  | ◉   |1🟥 |⬛  |
+| D |⬛  |⬛  | ◉  | ◉   |2🟨 |⬛  |
 |---+----+-----+----+-----+-----+----|
-| E |    |    |    |     |🟡* |🟨? |
-| F |    |    |    |     |🟨5*|    |
+| E |⬛  |⬛  |⬛  |⬛   |🟡* |?🟨 |
+| F |⬛  |⬛  |⬛  |⬛   |5🟨*|⬛  |
 ```
 
 Keep AM, ON, and TI as written for the first test.
@@ -529,9 +535,9 @@ Use if Rebellions are not happening often enough.
 Replace hidden cards with:
 
 ```text
-B1: 🟦? = AM Prefecture 3
-B6: 🟥? = ON Prefecture 5
-E6: 🟨? = TI Prefecture 1
+B1: ?🟦 = AM Prefecture 3
+B6: ?🟥 = ON Prefecture 5
+E6: ?🟨 = TI Prefecture 1
 ```
 
 This removes the initial Traps and makes face-down cards more likely to become numbered Rebellion threats when flipped.
