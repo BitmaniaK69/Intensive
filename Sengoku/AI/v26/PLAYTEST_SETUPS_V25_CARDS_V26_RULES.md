@@ -30,6 +30,8 @@ The setup starts from a partially developed board so players quickly face:
 - Protection placement.
 - Market vs Castle decisions.
 - Centre / Disputed Space pressure.
+- Protected Retainers already on the board.
+- Stacked cards already on the board.
 
 ## What we are not testing
 
@@ -54,6 +56,7 @@ Pay K3 to flip 1 face-down card, if it was not played this turn.
 End turn: gain Koku, discard down to 2 if needed, draw to 3.
 Market: discard 2 Protection tokens from cards in chain.
 Castle: discard 3 Protection tokens from cards in chain.
+Only the top card of a stack matters until it is removed.
 ```
 
 ## Table timing
@@ -93,6 +96,8 @@ Use this scenario to observe:
 5. Does anyone seriously consider Market instead of Castle?
 6. Does the centre become contested?
 7. Are V25 cards still understandable under V26 terminology?
+8. Is it clear that Retainers can be on the board and can be protected?
+9. Is it clear that only the top card of a stack matters?
 
 ---
 
@@ -119,6 +124,8 @@ Every board cell uses a fixed 3-character token inside the table.
 🟦5 = AM face-up Prefecture 5, unprotected
 🟦5* = AM face-up Prefecture 5, protected
 🟦? = AM face-down card, always unprotected
+🟥S* = ON Samurai, protected
+🟩M = TH Sohei / Warrior Monk, unprotected, top card of a stack
 ```
 
 Same pattern for the other colours:
@@ -133,19 +140,19 @@ Face-down cards are always unprotected, so they use `?` and do not need a Protec
 
 ### Visual board after setup
 
-This version deliberately gives each player one branch toward the outer row and one branch toward the centre. The centre is threatened but not fully occupied at setup.
+This version gives each player one branch toward the outer row and one branch toward the centre. ON starts with a protected Samurai already on the board. TH starts with a Sohei / Warrior Monk stacked on top of a Prefecture card, reducing his occupied spaces while keeping the same number of physical cards.
 
 ```text
-|   | 1  | 2   | 3  | 4  | 5   | 6  |
-|---|----|-----|----|----|-----|----|
-| A |    |🟦2*|    |    |🟥4*|    |
-| B |🟦? |🔵* |    |    |🔴* |🟥? |
-|---+----+-----+----+----+-----+----|
-| C |    |🟦5 | ◉  | ◉  |🟥1 |    |
-| D |    |🟩6 | ◉  | ◉  |🟨2 |    |
-|---+----+-----+----+----+-----+----|
-| E |🟩? |🟢* |    |    |🟡* |🟨? |
-| F |    |🟩3*|    |    |🟨5*|    |
+|   | 1  | 2   | 3  | 4   | 5   | 6  |
+|---|----|-----|----|-----|-----|----|
+| A |    |🟦2*|    |     |🟥4*|    |
+| B |🟦? |🔵* |    |🟥S*|🔴* |🟥? |
+|---+----+-----+----+-----+-----+----|
+| C |    |🟦5 | ◉  | ◉   |🟥1 |    |
+| D |    |🟩M | ◉  | ◉   |🟨2 |    |
+|---+----+-----+----+-----+-----+----|
+| E |    |🟢* |    |     |🟡* |🟨? |
+| F |    |🟩6*|    |     |🟨5*|    |
 ```
 
 Disputed Spaces:
@@ -165,7 +172,8 @@ Prepare one pack per player before the session.
 Important Retainer rule for this scenario:
 
 ```text
-Each player starts with the non-star copy of their clan-special Retainer in hand.
+Most players start with the non-star copy of their clan-special Retainer in hand.
+ON is the exception: his non-star Samurai starts protected on the board.
 The star/special copy remains shuffled in that player's deck.
 Confirm the clan-special Retainer assignment against the physical V25 cards before play.
 ```
@@ -227,12 +235,13 @@ AM should be tempted to play a second card, but doing so competes with Protectio
 
 ## ON - Oda Nobunaga / Red
 
-Role: military pressure, direct expansion, Castle path.
+Role: visible military pressure, protected Retainer, Castle path.
 
 Starting board:
 
 ```text
 A5: 🟥4*  ON Prefecture 4 + 1 Protection
+B4: 🟥S*  ON Samurai + 1 Protection
 B5: 🔴*   ON Daimyo + 1 Protection
 B6: 🟥?   ON face-down card
 C5: 🟥1   ON Prefecture 1
@@ -247,9 +256,9 @@ K3
 Starting hand:
 
 ```text
-1. ON Prefecture 6
-2. ON Prefecture 2
-3. ON Samurai - non-star copy
+1. ON Prefecture 2
+2. ON Prefecture 6
+3. ON Sohei / Warrior Monk
 ```
 
 First draw:
@@ -261,23 +270,38 @@ ON Prefecture 5
 Expected dilemma:
 
 ```text
-ON can attack, protect, build toward Castle, or expand inward from the upper-right side.
-ON should demonstrate whether Samurai pressure is clear and whether building is tempting enough.
+ON already has protected military pressure on the board.
+Instead of simply playing Samurai on turn 1, ON must decide whether to expand, build, protect further, recover/stack with Sohei, or spend Koku for tempo.
+```
+
+Facilitator note:
+
+```text
+ON intentionally starts with 5 cards on the board because the protected Samurai is part of the scenario demonstration.
+This is deliberate asymmetry, not a normal game setup rule.
 ```
 
 ---
 
 ## TH - Toyotomi Hideyoshi / Green
 
-Role: economy, Market pressure, flexible card flow.
+Role: economy, Market pressure, compact chain, stacking demonstration.
 
 Starting board:
 
 ```text
-D2: 🟩6   TH Prefecture 6
-E1: 🟩?   TH face-down card
+D2: 🟩M   TH Sohei / Warrior Monk, unprotected, stacked on top of TH Prefecture 3
 E2: 🟢*   TH Daimyo + 1 Protection
-F2: 🟩3*  TH Prefecture 3 + 1 Protection
+F2: 🟩6*  TH Prefecture 6 + 1 Protection
+```
+
+Stack detail:
+
+```text
+D2 stack:
+Top: TH Sohei / Warrior Monk, unprotected
+Bottom: TH Prefecture 3
+Only the top card matters until it is removed.
 ```
 
 Starting Koku:
@@ -303,8 +327,9 @@ TH Prefecture 4
 Expected dilemma:
 
 ```text
-TH starts with exactly two Protection tokens in chain.
-This makes Market relevant after a card/Protection play, but TH can also aim toward Castle by adding a third Protection.
+TH has the same number of physical cards as the others, but occupies fewer spaces because two cards are stacked.
+TH has two Protection tokens in chain, one on the Daimyo and one on Prefecture 6.
+This makes Market possible after development, but TH has less board spread than the others.
 ```
 
 ---
@@ -360,7 +385,6 @@ Recommended first run:
 ```text
 B1: 🟦? = AM Ronin Trap
 B6: 🟥? = ON Prefecture 5
-E1: 🟩? = TH Prefecture 4
 E6: 🟨? = TI Shinobi Trap
 ```
 
@@ -368,9 +392,10 @@ Purpose:
 
 ```text
 Two real Traps.
-Two numbered face-down cards.
+One numbered face-down card.
 No initial Rebellion.
 Enough uncertainty to make K3 flip decisions matter.
+TH has no face-down card in this version because his fourth physical card is the Prefecture under the Sohei stack.
 ```
 
 ---
@@ -383,9 +408,12 @@ Before starting, check:
 [ ] Board positions match the visual map.
 [ ] Each player has K3 available.
 [ ] Each player has exactly 3 cards in hand.
-[ ] Each player's hand includes the non-star copy of their clan-special Retainer.
+[ ] AM, TH, and TI hands include their non-star clan-special Retainer.
+[ ] ON non-star Samurai is protected on B4.
 [ ] Each star/special copy remains in the player's deck.
-[ ] Each player has 2 Protection tokens already on board.
+[ ] AM, TH, and TI each have 4 physical cards on the board.
+[ ] ON has 5 physical cards on the board by scenario design.
+[ ] TH D2 is a stack: Sohei on top, Prefecture 3 underneath.
 [ ] Hidden cards are placed face down and not inspected.
 [ ] First draw cards are placed on top of each player deck.
 [ ] No active Rebellion exists at setup.
@@ -407,6 +435,8 @@ The scenario is doing its job if by round 3 at least some of these happen:
 [ ] A Castle is built or nearly built.
 [ ] A Rebellion is prevented or resolved.
 [ ] At least two players contest or threaten Disputed Spaces.
+[ ] Players understand that ON's Samurai is protected.
+[ ] Players understand that TH's D2 stack only counts the top card.
 ```
 
 If none of these happen, the scenario is too passive.
@@ -422,25 +452,24 @@ Remove TH from the game:
 ```text
 Remove TH deck, kit, hand, first draw, and all TH board cards.
 Remove:
-D2: 🟩6
-E1: 🟩?
+D2: 🟩M stack, including TH Sohei / Warrior Monk and TH Prefecture 3 underneath
 E2: 🟢*
-F2: 🟩3*
+F2: 🟩6*
 ```
 
 3-player visual board after removing TH:
 
 ```text
-|   | 1  | 2   | 3  | 4  | 5   | 6  |
-|---|----|-----|----|----|-----|----|
-| A |    |🟦2*|    |    |🟥4*|    |
-| B |🟦? |🔵* |    |    |🔴* |🟥? |
-|---+----+-----+----+----+-----+----|
-| C |    |🟦5 | ◉  | ◉  |🟥1 |    |
-| D |    |    | ◉  | ◉  |🟨2 |    |
-|---+----+-----+----+----+-----+----|
-| E |    |    |    |    |🟡* |🟨? |
-| F |    |    |    |    |🟨5*|    |
+|   | 1  | 2   | 3  | 4   | 5   | 6  |
+|---|----|-----|----|-----|-----|----|
+| A |    |🟦2*|    |     |🟥4*|    |
+| B |🟦? |🔵* |    |🟥S*|🔴* |🟥? |
+|---+----+-----+----+-----+-----+----|
+| C |    |🟦5 | ◉  | ◉   |🟥1 |    |
+| D |    |    | ◉  | ◉   |🟨2 |    |
+|---+----+-----+----+-----+-----+----|
+| E |    |    |    |     |🟡* |🟨? |
+| F |    |    |    |     |🟨5*|    |
 ```
 
 Keep AM, ON, and TI as written for the first test.
@@ -448,8 +477,8 @@ Keep AM, ON, and TI as written for the first test.
 3-player note:
 
 ```text
-With TH removed, Market pressure is weaker.
-Observe ON and TI carefully to see whether either player still considers Market.
+With TH removed, Market pressure is weaker and the stacking example is removed.
+If stacking must be tested in a 3-player game, move the Sohei stack concept to ON or TI in a later variant.
 ```
 
 Optional 3-player tweak:
@@ -502,7 +531,6 @@ Replace hidden cards with:
 ```text
 B1: 🟦? = AM Prefecture 3
 B6: 🟥? = ON Prefecture 5
-E1: 🟩? = TH Prefecture 4
 E6: 🟨? = TI Prefecture 1
 ```
 
@@ -543,6 +571,8 @@ Koku pressure: Too low / Good / Too high
 Market value: Weak / Good / Too strong / Not tested
 Castle timing: Too slow / Good / Too fast
 Centre pressure: Ignored / Good / Too crowded
+Protected Retainer clarity: Unclear / Good / Very clear
+Stacking clarity: Unclear / Good / Very clear / Not tested
 Overall pace: Too slow / Good / Too fast
 Fun: 1 / 2 / 3 / 4 / 5
 One sentence from players:
@@ -586,8 +616,20 @@ AM2 at A2
 AM5 at C2
 ON4 at A5
 ON1 at C5
-TH6 at D2
-TH3 at F2
+TH3 at D2 under TH Sohei / Warrior Monk, currently not relevant while covered
+TH6 at F2
+TI2 at D5
+TI5 at F5
+```
+
+Visible top face-up Prefecture cards at setup:
+
+```text
+AM2 at A2
+AM5 at C2
+ON4 at A5
+ON1 at C5
+TH6 at F2
 TI2 at D5
 TI5 at F5
 ```
@@ -599,6 +641,8 @@ AM2 at A2 and TI2 at D5: not same row, column, or printed area.
 AM5 at C2 and TI5 at F5: not same row, column, or printed area.
 ```
 
+TH3 is under a Sohei stack and is not currently relevant for Rebellion checking.
+
 ## Main V26 assumptions used here
 
 - A Zone is any row, column, or printed area.
@@ -606,6 +650,7 @@ AM5 at C2 and TI5 at F5: not same row, column, or printed area.
 - Face-down cards have no number.
 - Only the top card of a stack matters for effects, limitations, and scoring.
 - Protection tokens can be placed only on valid face-up cards or Daimyo.
+- Retainers can be protected if they are valid face-up cards and the current rules allow Protection on that card.
 - Disputed Spaces cannot receive tokens, face-down Prefecture cards, or stacked Prefecture cards.
 
 ---
