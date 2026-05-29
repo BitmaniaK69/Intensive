@@ -98,55 +98,54 @@ Use this scenario to observe:
 
 ## Scenario A - Initial Board
 
-### Colour / clan mapping
-
-The board uses one-letter colour codes to keep every cell at **max 2 characters**.
+### Colour mapping
 
 ```text
-B = Blue   = AM - Akechi Mitsuhide
-R = Red    = ON - Oda Nobunaga
-G = Green  = TH - Toyotomi Hideyoshi
-Y = Yellow = TI - Tokugawa Ieyasu
+AM = Blue   🔵 / 🟦
+ON = Red    🔴 / 🟥
+TH = Green  🟢 / 🟩
+TI = Yellow 🟡 / 🟨
 ```
 
-### Two-character board notation
+### Fixed 3-character board notation
+
+Every board cell uses a fixed 3-character token inside the table.
 
 ```text
-.. = empty normal space
-@@ = empty Disputed Space / Imperial-style centre marker
-B● = Blue / AM Daimyo, not protected
-b● = Blue / AM Daimyo, protected
-B5 = Blue / AM face-up Prefecture 5, not protected
-b5 = Blue / AM face-up Prefecture 5, protected
-B? = Blue / AM face-down card
+    = empty normal space
+ ◉  = empty Disputed Space / Imperial-style centre marker
+🔵  = AM Daimyo, unprotected
+🔵* = AM Daimyo, protected
+🟦5 = AM face-up Prefecture 5, unprotected
+🟦5* = AM face-up Prefecture 5, protected
+🟦? = AM face-down card, always unprotected
 ```
 
-Protection is encoded by lowercase clan letter:
+Same pattern for the other colours:
 
 ```text
-B5 = unprotected Blue Prefecture 5
-b5 = protected Blue Prefecture 5
-B● = unprotected Blue Daimyo
-b● = protected Blue Daimyo
+🔴  / 🔴* / 🟥5 / 🟥5* / 🟥?
+🟢  / 🟢* / 🟩5 / 🟩5* / 🟩?
+🟡  / 🟡* / 🟨5 / 🟨5* / 🟨?
 ```
 
-Face-down cards do not show Protection in this scenario because face-down cards cannot receive Protection.
+Face-down cards are always unprotected, so they use `?` and do not need a Protection marker.
 
 ### Visual board after setup
 
 This version deliberately gives each player one branch toward the outer row and one branch toward the centre. The centre is threatened but not fully occupied at setup.
 
 ```text
-|  |1 |2 |3 |4 |5 |6 |
-|--|--|--|--|--|--|--|
-|A |..|b2|..|..|r4|..|
-|B |B?|b●|..|..|r●|R?|
-|--+--+--+--+--+--+--|
-|C |..|B5|@@|@@|R1|..|
-|D |..|G6|@@|@@|Y2|..|
-|--+--+--+--+--+--+--|
-|E |G?|g●|..|..|y●|Y?|
-|F |..|g3|..|..|y5|..|
+|   | 1  | 2   | 3  | 4  | 5   | 6  |
+|---|----|-----|----|----|-----|----|
+| A |    |🟦2*|    |    |🟥4*|    |
+| B |🟦? |🔵* |    |    |🔴* |🟥? |
+|---+----+-----+----+----+-----+----|
+| C |    |🟦5 | ◉  | ◉  |🟥1 |    |
+| D |    |🟩6 | ◉  | ◉  |🟨2 |    |
+|---+----+-----+----+----+-----+----|
+| E |🟩? |🟢* |    |    |🟡* |🟨? |
+| F |    |🟩3*|    |    |🟨5*|    |
 ```
 
 Disputed Spaces:
@@ -184,17 +183,17 @@ This mapping is currently marked as **TO CONFIRM AGAINST PHYSICAL CARDS**.
 
 ---
 
-## AM - Akechi Mitsuhide / Blue / B
+## AM - Akechi Mitsuhide / Blue
 
 Role: first player, centre pressure, trap/facedown tension.
 
 Starting board:
 
 ```text
-A2: b2  AM Prefecture 2 + 1 Protection
-B1: B?  AM face-down card
-B2: b●  AM Daimyo + 1 Protection
-C2: B5  AM Prefecture 5
+A2: 🟦2*  AM Prefecture 2 + 1 Protection
+B1: 🟦?   AM face-down card
+B2: 🔵*   AM Daimyo + 1 Protection
+C2: 🟦5   AM Prefecture 5
 ```
 
 Starting Koku:
@@ -226,17 +225,17 @@ AM should be tempted to play a second card, but doing so competes with Protectio
 
 ---
 
-## ON - Oda Nobunaga / Red / R
+## ON - Oda Nobunaga / Red
 
 Role: military pressure, direct expansion, Castle path.
 
 Starting board:
 
 ```text
-A5: r4  ON Prefecture 4 + 1 Protection
-B5: r●  ON Daimyo + 1 Protection
-B6: R?  ON face-down card
-C5: R1  ON Prefecture 1
+A5: 🟥4*  ON Prefecture 4 + 1 Protection
+B5: 🔴*   ON Daimyo + 1 Protection
+B6: 🟥?   ON face-down card
+C5: 🟥1   ON Prefecture 1
 ```
 
 Starting Koku:
@@ -268,17 +267,17 @@ ON should demonstrate whether Samurai pressure is clear and whether building is 
 
 ---
 
-## TH - Toyotomi Hideyoshi / Green / G
+## TH - Toyotomi Hideyoshi / Green
 
 Role: economy, Market pressure, flexible card flow.
 
 Starting board:
 
 ```text
-D2: G6  TH Prefecture 6
-E1: G?  TH face-down card
-E2: g●  TH Daimyo + 1 Protection
-F2: g3  TH Prefecture 3 + 1 Protection
+D2: 🟩6   TH Prefecture 6
+E1: 🟩?   TH face-down card
+E2: 🟢*   TH Daimyo + 1 Protection
+F2: 🟩3*  TH Prefecture 3 + 1 Protection
 ```
 
 Starting Koku:
@@ -310,17 +309,17 @@ This makes Market relevant after a card/Protection play, but TH can also aim tow
 
 ---
 
-## TI - Tokugawa Ieyasu / Yellow / Y
+## TI - Tokugawa Ieyasu / Yellow
 
 Role: defensive control, Rebellion awareness, tactical punishment.
 
 Starting board:
 
 ```text
-D5: Y2  TI Prefecture 2
-E5: y●  TI Daimyo + 1 Protection
-E6: Y?  TI face-down card
-F5: y5  TI Prefecture 5 + 1 Protection
+D5: 🟨2   TI Prefecture 2
+E5: 🟡*   TI Daimyo + 1 Protection
+E6: 🟨?   TI face-down card
+F5: 🟨5*  TI Prefecture 5 + 1 Protection
 ```
 
 Starting Koku:
@@ -359,10 +358,10 @@ Players must not inspect their own face-down cards once the scenario begins.
 Recommended first run:
 
 ```text
-B1: B? = AM Ronin Trap
-B6: R? = ON Prefecture 5
-E1: G? = TH Prefecture 4
-E6: Y? = TI Shinobi Trap
+B1: 🟦? = AM Ronin Trap
+B6: 🟥? = ON Prefecture 5
+E1: 🟩? = TH Prefecture 4
+E6: 🟨? = TI Shinobi Trap
 ```
 
 Purpose:
@@ -423,25 +422,25 @@ Remove TH from the game:
 ```text
 Remove TH deck, kit, hand, first draw, and all TH board cards.
 Remove:
-D2: G6
-E1: G?
-E2: g●
-F2: g3
+D2: 🟩6
+E1: 🟩?
+E2: 🟢*
+F2: 🟩3*
 ```
 
 3-player visual board after removing TH:
 
 ```text
-|  |1 |2 |3 |4 |5 |6 |
-|--|--|--|--|--|--|--|
-|A |..|b2|..|..|r4|..|
-|B |B?|b●|..|..|r●|R?|
-|--+--+--+--+--+--+--|
-|C |..|B5|@@|@@|R1|..|
-|D |..|..|@@|@@|Y2|..|
-|--+--+--+--+--+--+--|
-|E |..|..|..|..|y●|Y?|
-|F |..|..|..|..|y5|..|
+|   | 1  | 2   | 3  | 4  | 5   | 6  |
+|---|----|-----|----|----|-----|----|
+| A |    |🟦2*|    |    |🟥4*|    |
+| B |🟦? |🔵* |    |    |🔴* |🟥? |
+|---+----+-----+----+----+-----+----|
+| C |    |🟦5 | ◉  | ◉  |🟥1 |    |
+| D |    |    | ◉  | ◉  |🟨2 |    |
+|---+----+-----+----+----+-----+----|
+| E |    |    |    |    |🟡* |🟨? |
+| F |    |    |    |    |🟨5*|    |
 ```
 
 Keep AM, ON, and TI as written for the first test.
@@ -501,10 +500,10 @@ Use if Rebellions are not happening often enough.
 Replace hidden cards with:
 
 ```text
-B1: B? = AM Prefecture 3
-B6: R? = ON Prefecture 5
-E1: G? = TH Prefecture 4
-E6: Y? = TI Prefecture 1
+B1: 🟦? = AM Prefecture 3
+B6: 🟥? = ON Prefecture 5
+E1: 🟩? = TH Prefecture 4
+E6: 🟨? = TI Prefecture 1
 ```
 
 This removes the initial Traps and makes face-down cards more likely to become numbered Rebellion threats when flipped.
